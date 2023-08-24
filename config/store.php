@@ -237,24 +237,12 @@
         [
             'name' => 'Mariella',
             'surname'=> 'Papanaga',
-            'email' => 'gpaolini98@gmail.com',
+            'email' => 'MPapanaga@gmail.com',
             'password' => 'root',
             'img' => 'https://www.musiqua.it/djmedia/cropped_main_band_pictures/cropped_resized_cantante-lirica-soprano-professionista-12863_FokLYge.jpeg',
             'region' => 'Campania',
             'phone' => '3884567789',
             'cachet' => '250',
-            'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-            
-        ],
-        [
-            'name' => 'Giacomo',
-            'surname'=> 'Paolini',
-            'email' => 'gpaolini98@gmail.com',
-            'password' => 'root',
-            'img' => 'https://www.thomann.de/blog/wp-content/uploads/2017/01/10-conseils-pour-devenir-musicien-pro.jpg',
-            'region' => 'Lazio',
-            'phone' => '3384567789',
-            'cachet' => '200',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
             
         ],
