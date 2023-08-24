@@ -442,28 +442,6 @@
             'cachet' => '320',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
         ],
-        [
-            'name' => 'La band',
-            'surname'=> 'Pazza',
-            'email' => 'laBandPazza@gmail.com',
-            'password' => 'pazzissimi',
-            'img' => 'https://media.istockphoto.com/id/496120274/it/foto/rock-band-esecuzione-in-uno-studio.jpg?s=612x612&w=0&k=20&c=RUH-ChyL6jEeJlUrpXzAWskINSJi0E0Vg_LiNw0Ur6E=',
-            'region' => 'Campania',
-            'phone' => '3383255485',
-            'cachet' => '420',
-            'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-        ],
-        [
-            'name' => 'Francesca',
-            'surname'=> 'Romiti',
-            'email' => 'Fromiti97@gmail.com',
-            'password' => 'psw123',
-            'img' => 'https://www.ondamusicale.it/wp-content/uploads/2020/08/bonnie-raitt.jpg',
-            'region' => 'Emilia Romagna',
-            'phone' => '3385744816',
-            'cachet' => '150',
-            'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-        ]
     ];
     
 ?>
