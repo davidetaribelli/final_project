@@ -16,6 +16,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Genre::class);
     }
 
+    public function sponsors(){
+        return $this->belongsToMany(Sponsor::class);
+    }
+
     public function message(){
         return $this->belongsTo(Message::class);
     }

@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Vote;
 use App\Models\Genre;
+use App\Models\Sponsor;
 
 
 class UserSeeder extends Seeder
@@ -20,7 +21,8 @@ class UserSeeder extends Seeder
     {
         $users = config('store');
         $votes = Vote::all();
-        $genres = Genre::all(); 
+        $genres = Genre::all();
+        $sponsors = Sponsor::all();
         foreach ($users as $user) {
             $newUser = new User();
 
@@ -48,6 +50,16 @@ class UserSeeder extends Seeder
                 $arrayGenres[] = $genres->random()->id;
             }
             $newUser->genres()->attach(array_unique($arrayGenres));
+
+            $isSponsored = rand(0,2);
+            if ($isSponsored == 1) {
+                $newUser->sponsors()->attach($sponsors->random()->id);
+            }
+            // $sponsor = [];
+            // for ($i=0; $i < $numberGenres; $i++) { 
+            //     $arrayGenres[] = $genres->random()->id;
+            // }
+            // $newUser->genres()->attach(array_unique($arrayGenres));
         }
     }
 }
