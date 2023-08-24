@@ -12,8 +12,6 @@
             'phone' => '3384567789',
             'cachet' => '200',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Anastasia',
@@ -25,8 +23,6 @@
             'phone' => '3342352009',
             'cachet' => '500',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Claudio',
@@ -38,8 +34,6 @@
             'phone' => '33923502001',
             'cachet' => '700',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Filippo',
@@ -51,8 +45,6 @@
             'phone' => '3342352003',
             'cachet' => '270',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Fabio',
@@ -64,8 +56,6 @@
             'phone' => '3342352002',
             'cachet' => '300',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Claudia',
@@ -77,8 +67,6 @@
             'phone' => '3362342009',
             'cachet' => '300',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Erika',
@@ -90,8 +78,6 @@
             'phone' => '3382372301',
             'cachet' => '290',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Antonio',
@@ -103,8 +89,6 @@
             'phone' => '336234900',
             'cachet' => '200',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Giorgio',
@@ -116,8 +100,6 @@
             'phone' => '3382345679',
             'cachet' => '400',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Liliya',
@@ -129,8 +111,6 @@
             'phone' => '3342372902',
             'cachet' => '250',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ],
         [
             'name' => 'Andrea',
@@ -142,8 +122,6 @@
             'phone' => '3384567702',
             'cachet' => '230',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
-
-
         ]
     ]
 ?>
