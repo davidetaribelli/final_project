@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Vote;
 
 class UserSeeder extends Seeder
 {
@@ -16,14 +17,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         $users = config('store');
-
+        $votes = Vote::all();
         foreach ($users as $user) {
             $newUser = new User();
 
             $newUser -> name = $user['name'];
             $newUser -> surname = $user['surname'];
             $newUser -> email = $user['email'];
-            $newUser -> password = bcrypt($user['password']);
+            $newUser -> password = $user['password'];
             $newUser -> img = $user['img'];
             $newUser -> region = $user['region'];
             $newUser -> phone = $user['phone'];
@@ -31,6 +32,12 @@ class UserSeeder extends Seeder
             $newUser -> experience = $user['experience'];
 
             $newUser -> save();
+            $numberVotes = rand(1,3);
+            $arrayVotes = [];
+            for ($i=0; $i < $numberVotes; $i++) { 
+                $arrayVotes[] = $votes->random()->id;
+            }
+            $newUser->votes()->attach(array_unique($arrayVotes));
         }
     }
 }
