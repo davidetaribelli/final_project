@@ -16,6 +16,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Genre::class);
     }
 
+    public function message(){
+        return $this->belongsTo(Message::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

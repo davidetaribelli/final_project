@@ -5,15 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Message extends Model
 {
     use HasFactory;
 
     public function users(){
-        return $this->belongsToMany(User::class);
+        return $this->hasMany(User::class);
     }
 
     protected $fillable = [
+        'user_id',
         'name',
+        'email',
+        'message',
+        'date',
     ];
 }
