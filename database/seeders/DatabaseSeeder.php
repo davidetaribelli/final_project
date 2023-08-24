@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             GenreSeeder::class,
             MessageSeeder::class,
             ReviewSeeder::class,
+            VoteSeeder::class,
         ]);
     }
 }
