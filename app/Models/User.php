@@ -20,6 +20,10 @@ class User extends Authenticatable
         return $this->belongsTo(Message::class);
     }
 
+    public function review(){
+        return $this->belongsTo(Review::class);
+    }
+    
     /**
      * The attributes that are mass assignable.
      *
