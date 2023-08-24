@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Vote;
+use App\Models\Genre;
+
 
 class UserSeeder extends Seeder
 {
@@ -18,6 +20,7 @@ class UserSeeder extends Seeder
     {
         $users = config('store');
         $votes = Vote::all();
+        $genres = Genre::all(); 
         foreach ($users as $user) {
             $newUser = new User();
 
@@ -38,6 +41,13 @@ class UserSeeder extends Seeder
                 $arrayVotes[] = $votes->random()->id;
             }
             $newUser->votes()->attach(array_unique($arrayVotes));
+
+            $numberGenres = rand(1,3);
+            $arrayGenres = [];
+            for ($i=0; $i < $numberGenres; $i++) { 
+                $arrayGenres[] = $genres->random()->id;
+            }
+            $newUser->genres()->attach(array_unique($arrayGenres));
         }
     }
 }

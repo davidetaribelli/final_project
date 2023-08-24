@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             VoteSeeder::class,
-            UserSeeder::class,
             GenreSeeder::class,
+            UserSeeder::class,
             MessageSeeder::class,
             ReviewSeeder::class,
         ]);

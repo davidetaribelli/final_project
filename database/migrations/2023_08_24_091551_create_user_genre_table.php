@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_genre', function (Blueprint $table) {
+        Schema::create('genre_user', function (Blueprint $table) {
             $table->id();
             
             $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
