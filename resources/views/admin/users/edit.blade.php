@@ -4,9 +4,9 @@
 
 <h2>Crea Il tuo profilo</h2>
 
-<form action="{{route('admin.users.store')}}" method="POST">
+<form action="{{route('admin.users.update')}}" class="needs-validation" method="POST" enctype="multipart/form-data">
 @csrf
-
+@method("PUT");
         {{-- Nome --}}
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
@@ -71,7 +71,7 @@
         <div class="mb-3">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="phone">+39</span>
-                <input type="number" class="form-control @error('phone') is-invalid @enderror" placeholder="Numero cellulare" aria-label="Username" aria-describedby="basic-addon1" value="{{ old("phone") ?? $user->phone}}">
+                <input type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Numero cellulare" aria-label="Username" aria-describedby="basic-addon1" value="{{ old("phone") ?? $user->phone}}">
             </div>
 
             @error("phone")
@@ -83,7 +83,7 @@
         <div class="mb-3">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="cachet">€</span>
-                <input type="number" class="form-control @error('cachet') is-invalid @enderror" placeholder="Cachet" aria-label="Username" aria-describedby="basic-addon1" value="{{ old("cachet") ?? $user->cachet}}">
+                <input type="text" class="form-control @error('cachet') is-invalid @enderror" placeholder="Cachet" aria-label="Username" aria-describedby="basic-addon1" value="{{ old("cachet") ?? $user->cachet}}">
             </div>
         
             @error("cachet")

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUserRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,8 +29,8 @@ class StoreUserRequest extends FormRequest
            "email" =>"required|min:3|max:100",
            "img" =>"nullable|max:20480",
            "region" =>"required|min:3|max:100",
-           "phone" =>"required|min:10|max:10",
-           "cachet" =>"required",
+        //    "phone" =>"required|min:10|max:10",
+        //    "cachet" =>"required",
            "experience" =>"required",
         ];
     }
@@ -50,10 +50,10 @@ class StoreUserRequest extends FormRequest
 
             "region.required"=> "L'inserimento dalla regione è obbligatoria",
 
-            "phone.required"=> "Il numero di telefono è obbligatorio",
-            "phone.min"=> "Il numero di telefono deve avere almeno :min caratteri",
+            // "phone.required"=> "Il numero di telefono è obbligatorio",
+            // "phone.min"=> "Il numero di telefono deve avere almeno :min caratteri",
 
-            "cachet.required"=> "Il cachet è obbligatorio",
+            // "cachet.required"=> "Il cachet è obbligatorio",
 
             "experience.required"=> "Descrizione  è obbligatoria",
             

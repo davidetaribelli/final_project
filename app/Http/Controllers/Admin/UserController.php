@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +45,7 @@ class UserController extends Controller
         $newUser->fill($data);        
         $newUser->save();
 
-        return to_route("admin.projects.index", $newUser);
+        return to_route("admin.users.index", $newUser);
     }
 
     /**
@@ -72,13 +73,19 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\UpdateUserRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $data = $request-> validate(); 
+
+        $user = new User();
+        $user->fill($data);        
+        $user->update();
+
+        return to_route("admin.users.edit", $user);
     }
 
     /**
