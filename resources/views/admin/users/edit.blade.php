@@ -4,9 +4,9 @@
 
 <h2>Crea Il tuo profilo</h2>
 
-<form action="{{route('admin.users.update')}}" class="needs-validation" method="POST" enctype="multipart/form-data">
-@csrf
-@method("PUT");
+<form action="{{route('admin.users.update', $user->id)}}" class="needs-validation" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method("PUT")
         {{-- Nome --}}
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>

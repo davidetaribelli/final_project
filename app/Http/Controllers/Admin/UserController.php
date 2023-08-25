@@ -85,7 +85,7 @@ class UserController extends Controller
         $user->fill($data);        
         $user->update();
 
-        return to_route("admin.users.edit", $user);
+        return to_route("admin.users.index", $user);
     }
 
     /**

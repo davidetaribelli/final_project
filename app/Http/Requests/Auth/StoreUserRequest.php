@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateUserRequest extends FormRequest
+class StoreUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,8 +29,8 @@ class UpdateUserRequest extends FormRequest
            "email" =>"required|min:3|max:100",
            "img" =>"nullable|max:20480",
            "region" =>"required|min:3|max:100",
-            "phone" =>"required|min:10|max:10",
-            "cachet" =>"required",
+           "phone" =>"required|min:10|max:10",
+           "cachet" =>"required",
            "experience" =>"required",
         ];
     }
@@ -38,22 +38,22 @@ class UpdateUserRequest extends FormRequest
     public function messages()
     {
         return[
-            "name.required"=> "Il nome è obbligatorio",
-            "name.min"=> "Il nome deve avere almeno :min caratteri",
+            "name.required"=> "il nome è obbligatorio",
+            "name.min"=> "il nome deve avere almeno :min caratteri",
 
-            "surname.required"=> "Il cognome è obbligatorio",
-            "surname.min"=> "Il cognome deve avere almeno :min caratteri",
+            "surname.required"=> "il cognome è obbligatorio",
+            "surname.min"=> "il cognome deve avere almeno :min caratteri",
 
             "email.required"=> "L'inserimento dalla mail è obbligatoria",
 
-            "img.max"=>"Il percorso img supera i :max mb",
+            "img.max"=>"il percorso img supera i :max mb",
 
             "region.required"=> "L'inserimento dalla regione è obbligatoria",
 
-            "phone.required"=> "Il numero di telefono è obbligatorio",
-            "phone.min"=> "Il numero di telefono deve avere almeno :min caratteri",
+            "phone.required"=> "il numero di telefono è obbligatorio",
+            "phone.min"=> "il numero di telefono deve avere almeno :min caratteri",
 
-            "cachet.required"=> "Il cachet è obbligatorio",
+            "cachet.required"=> "IL cachet è obbligatorio",
 
             "experience.required"=> "Descrizione  è obbligatoria",
             
