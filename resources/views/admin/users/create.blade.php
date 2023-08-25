@@ -54,7 +54,7 @@
          {{-- Regione --}}
          <div class="mb-3">
             <label for="region" class="form-label">Regione</label>
-            <select class="form-select  @error('region') is-invalid @enderror" aria-label="Default select example" value="{{ old("region") ?? $user->region}}">
+            <select class="form-select  @error('region') is-invalid @enderror" aria-label="Default select example" value="{{ old("region")}}">
                 <option selected>Seleziona la regione di appartenenza</option>
                 <option value="1">Abruzzo</option>
                 <option value="2">Basilicata</option>
