@@ -8,6 +8,7 @@
         <h1>{{  $user->name }}</h1>
         <p>{{  $user->surname }}</p>
         <h2>{{  $user->email }}</h2>
+        <img src={{$user->img}} alt={{$user->name}}>
     </div>
 </div>
 

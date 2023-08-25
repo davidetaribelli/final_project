@@ -27,7 +27,7 @@ class StoreUserRequest extends FormRequest
            "name" =>"required|min:3|max:100",
            "surname" =>"required|min:3|max:100",
            "email" =>"required|min:3|max:100",
-           "img" =>"nullable|max:20480",
+           "img" =>"nullable",
            "region" =>"required|min:3|max:100",
            "phone" =>"required|min:10|max:10",
            "cachet" =>"required",

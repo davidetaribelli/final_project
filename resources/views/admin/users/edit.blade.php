@@ -54,29 +54,29 @@
          {{-- Regione --}}
         <div class="mb-3">
             <label for="region" class="form-label">Regione</label>
-            <select class="form-select  @error('region') is-invalid @enderror" aria-label="Default select example" value="{{ old("region") ?? $user->region}}">
-                <option selected>Seleziona la regione di appartenenza</option>
-                <option value="1">Abruzzo</option>
-                <option value="2">Basilicata</option>
-                <option value="3">Calabria</option>
-                <option value="4">Campania</option>
-                <option value="5">Emilia-Romagna</option>
-                <option value="6">Friuli Venezia Giulia</option>
-                <option value="7">Lazio</option>
-                <option value="8">Liguria</option>
-                <option value="9">Lombardia</option>
-                <option value="10">Marche</option>
-                <option value="11">Molise</option>
-                <option value="12">Piemonte</option>
-                <option value="13">Puglia</option>
-                <option value="14">Sardegna</option>
-                <option value="15">Sicilia</option>
-                <option value="16">Toscana</option>
-                <option value="17">Trentino Alto Adige</option>
-                <option value="18">Umbria</option>
-                <option value="19">Valle d'Aosta</option>
-                <option value="20">Veneto</option>
-              </select>
+            <select class="form-select  @error('region') is-invalid @enderror" aria-label="Default select example">
+                <option  value="{{$region->id}}" {{ old('region_id, $user->region_id) == $region_id ? 'selected' : ''}} selected>Seleziona la regione di appartenenza</option>
+                <option  value="{{ old("region") ?? $user->region}}">Abruzzo</option>
+                <option  value="{{ old("region") ?? $user->region}}">Basilicata</option>
+                <option  value="{{ old("region") ?? $user->region}}">Calabria</option>
+                <option  value="{{ old("region") ?? $user->region}}">Campania</option>
+                <option  value="{{ old("region") ?? $user->region}}">Emilia-Romagna</option>
+                <option  value="{{ old("region") ?? $user->region}}">Friuli Venezia Giulia</option>
+                <option  value="{{ old("region") ?? $user->region}}">Lazio</option>
+                <option  value="{{ old("region") ?? $user->region}}">Liguria</option>
+                <option  value="{{ old("region") ?? $user->region}}">Lombardia</option>
+                <option  value="{{ old("region") ?? $user->region}}">Marche</option>
+                <option  value="{{ old("region") ?? $user->region}}">Molise</option>
+                <option  value="{{ old("region") ?? $user->region}}">Piemonte</option>
+                <option  value="{{ old("region") ?? $user->region}}">Puglia</option>
+                <option  value="{{ old("region") ?? $user->region}}">Sardegna</option>
+                <option  value="{{ old("region") ?? $user->region}}">Sicilia</option>
+                <option  value="{{ old("region") ?? $user->region}}">Toscana</option>
+                <option  value="{{ old("region") ?? $user->region}}">Trentino Alto Adige</option>
+                <option  value="{{ old("region") ?? $user->region}}">Umbria</option>
+                <option  value="{{ old("region") ?? $user->region}}">Valle d'Aosta</option>
+                <option  value="{{ old("region") ?? $user->region}}">Veneto</option>
+            </select>
 
             @error("region")
                 <div class="invalid-feedback">{{$message}}</div>
