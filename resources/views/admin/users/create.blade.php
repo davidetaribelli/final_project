@@ -52,8 +52,9 @@
         </div>
 
          {{-- Regione --}}
-        <div class="mb-3">
-            <select class="form-select  @error('region') is-invalid @enderror" aria-label="Default select example">
+         <div class="mb-3">
+            <label for="region" class="form-label">Regione</label>
+            <select class="form-select  @error('region') is-invalid @enderror" aria-label="Default select example" value="{{ old("region") ?? $user->region}}">
                 <option selected>Seleziona la regione di appartenenza</option>
                 <option value="1">Abruzzo</option>
                 <option value="2">Basilicata</option>
@@ -69,11 +70,12 @@
                 <option value="12">Piemonte</option>
                 <option value="13">Puglia</option>
                 <option value="14">Sardegna</option>
-                <option value="15">Toscana</option>
-                <option value="16">Trentino Alto Adige</option>
-                <option value="17"> Umbria</option>
-                <option value="18">Val d'Aosta</option>
-                <option value="19">Veneto</option>
+                <option value="15">Sicilia</option>
+                <option value="16">Toscana</option>
+                <option value="17">Trentino Alto Adige</option>
+                <option value="18">Umbria</option>
+                <option value="19">Val d'Aosta</option>
+                <option value="20">Veneto</option>
               </select>
 
             @error("region")

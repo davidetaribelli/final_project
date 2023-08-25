@@ -70,11 +70,12 @@
                 <option value="12">Piemonte</option>
                 <option value="13">Puglia</option>
                 <option value="14">Sardegna</option>
-                <option value="15">Toscana</option>
-                <option value="16">Trentino Alto Adige</option>
-                <option value="17"> Umbria</option>
-                <option value="18">Val d'Aosta</option>
-                <option value="19">Veneto</option>
+                <option value="15">Sicilia</option>
+                <option value="16">Toscana</option>
+                <option value="17">Trentino Alto Adige</option>
+                <option value="18">Umbria</option>
+                <option value="19">Val d'Aosta</option>
+                <option value="20">Veneto</option>
               </select>
 
             @error("region")
