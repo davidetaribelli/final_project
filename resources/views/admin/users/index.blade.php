@@ -14,12 +14,8 @@
     </div>
 </div>
 
-<button type="button" class="btn btn-light">
-    <a href="{{route("admin.users.create", $user)}}">Crea il profilo</a>                       
-</button>
-
-<button type="button" class="btn btn-light">
-    <a href="{{route("admin.users.edit", $user->id)}}">Modifica il profilo</a>                       
+<button type="button" class="mt-4">
+    <a class="btn btn-light" href="{{route("admin.users.edit", $user->id)}}">Modifica il profilo</a>                       
 </button>
 
 @endsection
