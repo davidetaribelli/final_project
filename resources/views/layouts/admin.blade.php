@@ -43,7 +43,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.users.show' ? 'bg-secondary' : '' }}" href="{{ route('admin.users.show', isset($user) ? $user->id : '') }}">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.users.index' ? 'bg-secondary' : '' }}" href="{{ route('admin.users.index') }}">
                                   <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Info
                                 </a>
                             </li>

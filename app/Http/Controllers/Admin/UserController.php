@@ -15,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        return view("admin.users.index", compact("user"));
     }
 
     /**
@@ -45,10 +46,9 @@ class UserController extends Controller
      * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
-    {   
-        $user = Auth::user();
-        return view("admin.users.show", compact("user"));
+    public function show()
+    {
+        // 
     }
 
     /**
