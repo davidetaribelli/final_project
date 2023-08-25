@@ -54,30 +54,14 @@
          {{-- Regione --}}
         <div class="mb-3">
             <label for="region" class="form-label">Regione</label>
-            <select class="form-select  @error('region') is-invalid @enderror" aria-label="Default select example">
-                <option  value="{{$region->id}}" {{ old('region_id, $user->region_id) == $region_id ? 'selected' : ''}} selected>Seleziona la regione di appartenenza</option>
-                <option  value="{{ old("region") ?? $user->region}}">Abruzzo</option>
-                <option  value="{{ old("region") ?? $user->region}}">Basilicata</option>
-                <option  value="{{ old("region") ?? $user->region}}">Calabria</option>
-                <option  value="{{ old("region") ?? $user->region}}">Campania</option>
-                <option  value="{{ old("region") ?? $user->region}}">Emilia-Romagna</option>
-                <option  value="{{ old("region") ?? $user->region}}">Friuli Venezia Giulia</option>
-                <option  value="{{ old("region") ?? $user->region}}">Lazio</option>
-                <option  value="{{ old("region") ?? $user->region}}">Liguria</option>
-                <option  value="{{ old("region") ?? $user->region}}">Lombardia</option>
-                <option  value="{{ old("region") ?? $user->region}}">Marche</option>
-                <option  value="{{ old("region") ?? $user->region}}">Molise</option>
-                <option  value="{{ old("region") ?? $user->region}}">Piemonte</option>
-                <option  value="{{ old("region") ?? $user->region}}">Puglia</option>
-                <option  value="{{ old("region") ?? $user->region}}">Sardegna</option>
-                <option  value="{{ old("region") ?? $user->region}}">Sicilia</option>
-                <option  value="{{ old("region") ?? $user->region}}">Toscana</option>
-                <option  value="{{ old("region") ?? $user->region}}">Trentino Alto Adige</option>
-                <option  value="{{ old("region") ?? $user->region}}">Umbria</option>
-                <option  value="{{ old("region") ?? $user->region}}">Valle d'Aosta</option>
-                <option  value="{{ old("region") ?? $user->region}}">Veneto</option>
+            <select class="form-select @error('region') is-invalid @enderror" aria-label="Default select example" name="region">
+                <option value="" selected>Seleziona la regione di appartenenza</option>
+                @foreach (config('regions') as $region)
+                    <option value="{{ $region['region'] }}" {{ old('region', $user->region) == $region['region'] ? 'selected' : '' }}>
+                        {{ $region['region'] }}
+                    </option>
+                @endforeach
             </select>
-
             @error("region")
                 <div class="invalid-feedback">{{$message}}</div>
              @enderror
