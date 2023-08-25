@@ -94,12 +94,14 @@
 
         {{-- Prezzo --}}
         <div class="mb-3">
-            <label for="cachet" class="form-label">Prezzo</label>
-            <input type="text" class="form-control @error('cachet') is-invalid @enderror" id="cachet" name="cachet" aria-describedby="" value="{{ old("cachet") ?? $user->cachet}}">
-
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="cachet">€</span>
+                <input type="number" class="form-control @error('cachet') is-invalid @enderror" id="cachet" name="cachet" aria-describedby="" value="{{ old("cachet") ?? $user->cachet}}">
+            </div>
+        
             @error("cachet")
                 <div class="invalid-feedback">{{$message}}</div>
-             @enderror
+            @enderror
         </div>
 
 
