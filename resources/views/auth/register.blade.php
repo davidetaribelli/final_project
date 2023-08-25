@@ -40,17 +40,18 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="region" class="col-md-4 col-form-label text-md-right">{{ __('Region') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="region" type="text" class="form-control @error('region') is-invalid @enderror" name="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
-
-                                @error('region')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
+                            <label for="region" class="form-label">Regione</label>
+                            <select class="form-select @error('region') is-invalid @enderror" aria-label="Default select example" name="region">
+                                <option value="" selected>Seleziona la regione di appartenenza</option>
+                                @foreach (config('regions') as $region)
+                                    <option value="{{ $region['region'] }}">
+                                        {{ $region['region'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error("region")
+                                <div class="invalid-feedback">{{$message}}</div>
+                             @enderror
                         </div>
 
                         <div class="mb-4 row">

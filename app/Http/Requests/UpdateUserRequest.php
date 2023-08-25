@@ -52,7 +52,6 @@ class UpdateUserRequest extends FormRequest
 
             "phone.required"=> "Il numero di telefono è obbligatorio",
             "phone.min"=> "Il numero di telefono deve avere almeno :min caratteri",
-
             "cachet.required"=> "Il cachet è obbligatorio",
 
             "experience.required"=> "Descrizione  è obbligatoria",

@@ -39,7 +39,7 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        $data = $request-> validate(); 
+        $data = $request-> validated(); 
 
         $newUser = new User();
         $newUser->fill($data);        
@@ -79,9 +79,13 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        $data = $request-> validate(); 
+        // dd($request);
 
-        $user = new User();
+        $data = $request-> validated(); 
+        
+        // dd($data);
+
+        // $user = new User();
         $user->fill($data);        
         $user->update();
 

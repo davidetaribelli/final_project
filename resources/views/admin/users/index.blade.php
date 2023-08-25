@@ -8,6 +8,8 @@
         <h1>{{  $user->name }}</h1>
         <p>{{  $user->surname }}</p>
         <h2>{{  $user->email }}</h2>
+        Numero Di telefono:<h2>{{  $user->phone }}</h2> 
+        Prezzo:<h2>{{  $user->cachet }}</h2> 
         <img src={{$user->img}} alt={{$user->name}}>
     </div>
 </div>

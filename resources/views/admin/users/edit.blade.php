@@ -4,6 +4,21 @@
 
 <h2>Crea Il tuo profilo</h2>
 
+<div class="container-fluid mt-4">
+    <div class="row justify-content-between">
+        <h2></h2>
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li class="">
+                        {{$error}}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
 <form action="{{route('admin.users.update', $user->id)}}" class="needs-validation" method="POST" enctype="multipart/form-data">
     @csrf
     @method("PUT")
@@ -69,27 +84,24 @@
 
         {{-- Telefono --}}
         <div class="mb-3">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="phone">+39</span>
-                <input type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Numero cellulare" aria-label="Username" aria-describedby="basic-addon1" value="{{ old("phone") ?? $user->phone}}">
-            </div>
+            <label for="phone" class="form-label">Inserisci Il numero di telefono</label>
+            <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" aria-describedby="" value="{{ old("phone") ?? $user->phone}}">
 
             @error("phone")
                 <div class="invalid-feedback">{{$message}}</div>
-            @enderror
+             @enderror
         </div>
 
-        {{-- Telefono --}}
+        {{-- Prezzo --}}
         <div class="mb-3">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="cachet">€</span>
-                <input type="text" class="form-control @error('cachet') is-invalid @enderror" placeholder="Cachet" aria-label="Username" aria-describedby="basic-addon1" value="{{ old("cachet") ?? $user->cachet}}">
-            </div>
-        
+            <label for="cachet" class="form-label">Prezzo</label>
+            <input type="text" class="form-control @error('cachet') is-invalid @enderror" id="cachet" name="cachet" aria-describedby="" value="{{ old("cachet") ?? $user->cachet}}">
+
             @error("cachet")
                 <div class="invalid-feedback">{{$message}}</div>
-            @enderror
+             @enderror
         </div>
+
 
         {{-- Esperienza --}}
         <div class="mb-3">
