@@ -26,6 +26,34 @@
                         </div>
 
                         <div class="mb-4 row">
+                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
+
+                                @error('surname')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="region" class="col-md-4 col-form-label text-md-right">{{ __('Region') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="region" type="text" class="form-control @error('region') is-invalid @enderror" name="region" value="{{ old('region') }}" required autocomplete="region" autofocus>
+
+                                @error('region')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
