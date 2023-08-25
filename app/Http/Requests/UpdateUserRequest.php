@@ -38,10 +38,22 @@ class StoreUserRequest extends FormRequest
     public function messages()
     {
         return[
-            "name.required"=> "il nome è obbligatorio",
-            "name.min"=> "il nome deve avere almeno :min caratteri",
+            "name.required"=> "Il nome è obbligatorio",
+            "name.min"=> "Il nome deve avere almeno :min caratteri",
 
-            "img.max"=>"il percorso img max: caratteri",
+            "surname.required"=> "Il cognome è obbligatorio",
+            "surname.min"=> "Il cognome deve avere almeno :min caratteri",
+
+            "email.required"=> "L'inserimento dalla mail è obbligatoria",
+
+            "img.max"=>"Il percorso img supera i :max mb",
+
+            "region.required"=> "L'inserimento dalla regione è obbligatoria",
+
+            "phone.required"=> "Il numero di telefono è obbligatorio",
+            "phone.min"=> "Il numero di telefono deve avere almeno :min caratteri",
+
+            "cachet.required"=> "Il cachet è obbligatorio",
 
             "experience.required"=> "Descrizione  è obbligatoria",
             

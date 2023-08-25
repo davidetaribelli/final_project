@@ -41,7 +41,19 @@ class StoreUserRequest extends FormRequest
             "name.required"=> "il nome è obbligatorio",
             "name.min"=> "il nome deve avere almeno :min caratteri",
 
-            "img.max"=>"il percorso img max: caratteri",
+            "surname.required"=> "il cognome è obbligatorio",
+            "surname.min"=> "il cognome deve avere almeno :min caratteri",
+
+            "email.required"=> "L'inserimento dalla mail è obbligatoria",
+
+            "img.max"=>"il percorso img supera i :max mb",
+
+            "region.required"=> "L'inserimento dalla regione è obbligatoria",
+
+            "phone.required"=> "il numero di telefono è obbligatorio",
+            "phone.min"=> "il numero di telefono deve avere almeno :min caratteri",
+
+            "cachet.required"=> "IL cachet è obbligatorio",
 
             "experience.required"=> "Descrizione  è obbligatoria",
             
