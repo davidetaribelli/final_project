@@ -21,7 +21,7 @@
             'email' => 'zubiFede@gmail.com',
             'password' => 'ciao',
             'img' => 'https://upload.wikimedia.org/wikipedia/commons/9/91/Guy_Pratt_On_An_Island_Tour_Cropped.png',
-            'region' => 'umbria',
+            'region' => 'Umbria',
             'phone' => '3381245786',
             'cachet' => '270',
             'experience' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus laboriosam, quae distinctio voluptas facere eaque totam rem libero quisquam architecto et non voluptatem cupiditate voluptates in id repudiandae vitae pariatur.',
