@@ -108,7 +108,7 @@
             'surname'=> 'Ricci',
             'email' => 'mricci@example.com',
             'password' =>'michele123',
-            'img' => 'https://example.com/images/michele.jpg',
+            'img' => 'https://www.frosinonecalcio.com/wp-content/uploads/2021/09/default-placeholder.png',
             'region' => 'Lombardia',
             'phone' => '5678901234',
             'cachet' => '400',

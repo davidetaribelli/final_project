@@ -1,7 +1,12 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+<!doctype html>
+
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@php
+    $user = Auth::user();        
+@endphp
 <head>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,12 +28,18 @@
 
 <body>
     <div id="app">
-
         <div class="container-fluid vh-100">
             <div class="row h-100">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
+
+                             <h3 class="text-center text-white">AudioVibe</h3>
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <img class="mt-3 w-75 rounded-circle" src="{{ asset(Auth::user()->img) }}" alt="">
+                               <h4 class="text-white mt-3">{{ $user->name }}</h4>
+                               <div class="text-white">{{$user->email}}</div>
+                            </div> 
 
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="/">
@@ -61,7 +72,6 @@
 
                     </div>
                 </nav>
-
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     @yield('content')
                 </main>
