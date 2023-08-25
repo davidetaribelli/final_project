@@ -74,7 +74,7 @@
                 <option value="16">Toscana</option>
                 <option value="17">Trentino Alto Adige</option>
                 <option value="18">Umbria</option>
-                <option value="19">Val d'Aosta</option>
+                <option value="19">Valle d'Aosta</option>
                 <option value="20">Veneto</option>
               </select>
 
