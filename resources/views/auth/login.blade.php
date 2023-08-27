@@ -32,7 +32,7 @@
                             <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="mb-4 row">
-                                <input id="password" type="text" class="rounded-4 form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="current-password" autofocus>
+                                <input id="password" type="password" class="rounded-4 form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="current-password" autofocus>
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
 
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Login') }}
                                 </button>
                             </div>
