@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             $newUser -> surname = $user['surname'];
             $newUser -> email = $user['email'];
             $newUser -> password = bcrypt($user['password']);
-            $newUser -> img = $user['img'];
+            $newUser -> img = "placeholders/placeholder.jpg";
             $newUser -> region = $user['region'];
             $newUser -> phone = $user['phone'];
             $newUser -> cachet = $user['cachet'];

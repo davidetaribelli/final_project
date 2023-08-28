@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Genre;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -89,6 +90,8 @@ class UserController extends Controller
         
         // dd($data);
 
+        $img_path = Storage::put('uploads', $data['img']);
+        $data['img'] = $img_path;
         // $user = new User();
         $user->fill($data);        
         $user->update();
