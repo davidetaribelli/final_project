@@ -85,11 +85,4 @@
        
     </div>
 </div>
-
-<div class="container-fluid mt-5">
-
-   
-</div>
-
-
 @endsection
