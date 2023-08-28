@@ -51,21 +51,20 @@
                             
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
                                 <a class="nav-link text-dark text-center" href="/">
-                                    {{-- <i class="fa-solid fa-home-alt fa-lg fa-fw text-dark"></i> Home --}}
                                     Home
                                 </a>
                             </div>
                             
                         
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg_selected_button' : '' }}" href="{{route('admin.dashboard')}}">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.dashboard')}}">
                                     Dashboard
                                 </a>
                             </div>
                             
                         
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'bg_selected_button' : '' }}" href="{{ route('admin.users.index') }}">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{ route('admin.users.index') }}">
                                     Profilo
                                 </a>
                             </div>

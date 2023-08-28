@@ -51,7 +51,7 @@ $user = Auth::user();
 
             <div id="profileMessage" class="alert alert-warning mt-3" style="display: none;"></div>
 
-            <button type="button" class="btn btn-light rounded-pill bg_cl_primary m-2">
+            <button type="button" class="btn btn-light rounded-pill bg_cl_primary m-2 border-0">
                 <a class="text-decoration-none text-dark" href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
             </button>
 
