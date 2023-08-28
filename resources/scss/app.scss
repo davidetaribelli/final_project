@@ -21,3 +21,24 @@
     object-fit: cover;
     flex-shrink: 1;
 }
+
+.btnColor{
+    background-color: #8999da; ;
+}
+
+.star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: gray; /* Colore delle stelle vuote */
+    margin-right: 2px;
+}
+
+.yellow {
+    background-color: yellow; /* Colore delle stelle piene */
+}
+
+.widthBadge{
+    width: 150px;
+}
+
