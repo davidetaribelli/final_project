@@ -10,6 +10,7 @@ $user = Auth::user();
     document.addEventListener("DOMContentLoaded", function () {
         // Dati dell'utente
         const userData = @json($user);
+        const genreData = @json($user->genres);
 
         // Elemento in cui mostrare il messaggio
         const messageElement = document.getElementById("profileMessage");
@@ -19,7 +20,7 @@ $user = Auth::user();
         if (!userData.img) missingData.push("immagine del profilo");
         if (!userData.cachet) missingData.push("cachet");
         if (!userData.experience) missingData.push("esperienza");
-        if (!userData.genre) missingData.push("genere musicale");
+        if (!genreData.length === 0) missingData.push("genere musicale");
 
         if (missingData.length > 0) {
             messageElement.textContent =
