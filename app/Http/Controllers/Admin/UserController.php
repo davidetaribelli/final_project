@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Genre;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -67,7 +68,10 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.edit', compact('user'));
+        $user = Auth::user();
+        $genres = Genre::all();
+
+        return view('admin.users.edit', compact("user","genres"));
     }
 
     /**
@@ -88,6 +92,8 @@ class UserController extends Controller
         // $user = new User();
         $user->fill($data);        
         $user->update();
+
+        $user->genres()->sync($data["genres"]);
 
         return to_route("admin.users.index", $user);
     }

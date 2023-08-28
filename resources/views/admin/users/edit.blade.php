@@ -104,6 +104,21 @@
             @enderror
         </div>
 
+        {{-- Genere --}}        
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genere</label>
+                @foreach ($genres as $i=>$genre)
+                <div class="form-check">
+                    <input type="checkbox" value="{{$genre->id}}" name="genres[]" id="genres{{$i}}" class="form-check-input" 
+                    {{ in_array($genre->id, old('genres', $user->genres->pluck('id')->toArray())) ? 'checked' : '' }}>
+                    <label for="genres{{$i}}" class="form-check-label">{{$genre->name}}</label>
+                </div>
+                @endforeach
+
+            @error("genre")
+                <div class="invalid-feedback">{{$message}}</div>
+             @enderror
+        </div>
 
         {{-- Esperienza --}}
         <div class="mb-3">

@@ -32,6 +32,7 @@ class UpdateUserRequest extends FormRequest
             "phone" =>"required|min:10|max:10",
             "cachet" =>"required",
            "experience" =>"required",
+           "genres" =>"nullable|exists:genres,id",
         ];
     }
 
