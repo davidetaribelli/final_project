@@ -28,8 +28,8 @@
 
 <body>
     <div id="app">
-        <div class="container-fluid vh-100 bg_primary">
-            <div class="row vh-100">
+        <div class="container-fluid bg_primary">
+            <div class="row">
      
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 sidebar rounded-5 m-3 bg_navbar">
                     <div class="position-sticky pt-3">
