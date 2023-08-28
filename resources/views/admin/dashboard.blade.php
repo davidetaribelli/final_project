@@ -1,25 +1,62 @@
 @extends('layouts.admin')
 
 @section('content')
+
+<?php 
+$user = Auth::user();
+?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Dati dell'utente
+        const userData = @json($user);
+
+        // Elemento in cui mostrare il messaggio
+        const messageElement = document.getElementById("profileMessage");
+
+        // Lista dei dati mancanti
+        const missingData = [];
+        if (!userData.img) missingData.push("immagine del profilo");
+        if (!userData.cachet) missingData.push("cachet");
+        if (!userData.experience) missingData.push("esperienza");
+        if (!userData.genre) missingData.push("genere musicale");
+
+        if (missingData.length > 0) {
+            messageElement.textContent =
+                "Completa il tuo profilo! Ti mancano da inserire i seguenti dati: " +
+                missingData.join(", ");
+            messageElement.style.display = "block";
+        }
+    });
+</script>
+
 <div class="container-fluid mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('Benvenuto') }}
-                    </div>
-                    @endif
-
-                    @auth
-                        <div class="alert alert-success" role="alert">
-                            {{ __('Benvenuto,') }} {{ Auth::user()->name }} {{ Auth::user()->surname }}!
-                        </div>
-                    @endauth 
+            <div class="card-body">
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('Benvenuto') }}
                 </div>
+                @endif
+
+                @auth
+                    <div class="alert alert-success" role="alert">
+                        {{ __('Benvenuto,') }} {{ Auth::user()->name }} {{ Auth::user()->surname }}!
+                    </div>
+                @endauth 
             </div>
+
+            <div id="profileMessage" class="alert alert-warning mt-3" style="display: none;"></div>
+
+            <button type="button" class="btn btn-light">
+                <a href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
+            </button>
+
+            
         </div>
     </div>
+    
 </div>
 @endsection

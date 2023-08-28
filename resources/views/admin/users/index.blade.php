@@ -25,6 +25,16 @@
             </div>
         </div>
 
+        {{-- genere --}}
+        <div class="col-12 mt-5 p-0">
+            <h3>Generi Musicali:</h3>
+            <ul>
+                @foreach ($user->genres as $genre)
+                  <li>{{$genre->name}}</li>  
+                @endforeach
+            </ul>
+        </div>
+
         {{-- esperienza. --}}
         <div class="col-12 mt-5 p-0">
             <h3>Esperienza e descrizione personale</h3>
