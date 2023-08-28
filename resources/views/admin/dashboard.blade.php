@@ -37,7 +37,7 @@ $user = Auth::user();
 
             <div class="card-body">
                 @if (session('status'))
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-primary" role="alert">
                     {{ session('Benvenuto') }}
                 </div>
                 @endif
@@ -52,7 +52,7 @@ $user = Auth::user();
             <div id="profileMessage" class="alert alert-warning mt-3" style="display: none;"></div>
 
             <button type="button" class="btn btn-light rounded-pill bg_cl_primary m-2 border-0">
-                <a class="text-decoration-none text-dark" href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
+                <a class="text-decoration-none text-dark fw-bold" href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
             </button>
 
             
