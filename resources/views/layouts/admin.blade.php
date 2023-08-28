@@ -28,7 +28,7 @@
 
 <body>
     <div id="app">
-        <div class="container-fluid bg_primary">
+        <div class="container-fluid bg_primary provaVH" id="provaVH" style="min-height: 100vh;">
             <div class="row">
      
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 sidebar rounded-5 m-3 bg_navbar">

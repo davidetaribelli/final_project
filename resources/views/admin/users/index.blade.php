@@ -67,15 +67,6 @@
             </ul>
         </div>
 
-        {{-- esperienza. --}}
-        <div class="col-12 mt-5 p-0">
-            <h3>Esperienza e descrizione personale</h3>
-
-            <div>
-                {{  $user->experience }}
-            </div>
-        </div>
-
         {{-- bottone --}} 
         <div class="col-3 p-0">
             <button type="button" class="mt-4 btn btn-outline-dark">
