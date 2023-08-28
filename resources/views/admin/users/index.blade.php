@@ -76,13 +76,13 @@
             </div>
         </div>
 
-        {{-- bottone --}}
-        {{-- <div class="col-3 p-0">
+        {{-- bottone --}} 
+        <div class="col-3 p-0">
             <button type="button" class="mt-4 btn btn-outline-dark">
                 <a class="btn btn-light" href="{{route("admin.users.edit", $user->id)}}">Modifica il profilo</a>                       
             </button>
         </div>
-        --}}
+       
     </div>
 </div>
 
