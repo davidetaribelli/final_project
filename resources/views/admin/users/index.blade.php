@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        {{-- esperienza. --}}
+        {{-- dati personali. --}}
         <div class="col-6 mt-5 p-0">
             <div class="col-md-6 d-flex flex-column">
                 <h4 class="p-2">Dati Personali</h4>
@@ -59,7 +59,7 @@
         </div>
 
         {{-- genere --}}
-        <div class="col-12 mt-5 p-0">
+        <div class="col-12 mt-5 p-0 ">
             <h3>Generi Musicali:</h3>
                 @foreach ($user->genres as $genre)
                   <h1 class="list-unstyled text-white fs-5 text-decoration-none badge btnColor">{{$genre->name}}</h1>  
@@ -68,8 +68,8 @@
         </div>
 
         {{-- bottone --}} 
-        <div class="col-3 p-0">
-            <button type="button" class="mt-4 btn btn-outline-dark">
+        <div class="col-10 d-flex justify-content-end p-0 ">
+            <button type="button" class="mt-4 btn btn-light">
                 <a class="btn btn-light" href="{{route("admin.users.edit", $user->id)}}">Modifica il profilo</a>                       
             </button>
         </div>

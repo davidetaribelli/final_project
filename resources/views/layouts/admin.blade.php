@@ -37,7 +37,7 @@
 
                             
                             <div class="d-flex flex-column justify-content-center align-items-center">
-                                <div class="containerImg ">
+                                <div class="containerImg mb-3">
                                     @if ($user->img === null)
                                         <img class="profile_img_nav mt-3 rounded-circle" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
                                     @else
