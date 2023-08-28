@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </nav>
-                <main class="col-7 p-0">
+                <main class="col-7 mx-auto p-0">
                     @yield('content')
                 </main>
                 
