@@ -36,7 +36,9 @@
 
                              <h3 class="text-center text-white">AudioVibe</h3>
                             <div class="d-flex flex-column justify-content-center align-items-center">
-                                <img class="profile_img_nav mt-3 rounded-circle" src="{{ asset(Auth::user()->img) }}" alt="">
+                                <div class="containerImg ">
+                                    <img class="profile_img_nav mt-3 rounded-circle" src="{{ asset(Auth::user()->img) }}" alt="">
+                                </div>
                                <h4 class="text-white mt-3">{{ $user->name }}</h4>
                                <div class="text-white">{{$user->email}}</div>
                             </div> 
