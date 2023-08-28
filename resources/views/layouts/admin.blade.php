@@ -102,7 +102,7 @@
 
                     </div>
                 </nav>
-                <main class="col-9 px-md-4">
+                <main class="col-9 p-5 m-3 bg_secondary rounded-5">
                     @yield('content')
                 </main>
             </div>

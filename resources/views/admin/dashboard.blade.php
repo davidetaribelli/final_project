@@ -44,15 +44,15 @@ $user = Auth::user();
 
                 @auth
                     <div class="alert alert-success" role="alert">
-                        {{ __('Benvenuto,') }} {{ Auth::user()->name }} {{ Auth::user()->surname }}!
+                        {{ __('Benvenuto/a,') }} {{ Auth::user()->name }} {{ Auth::user()->surname }}!
                     </div>
                 @endauth 
             </div>
 
             <div id="profileMessage" class="alert alert-warning mt-3" style="display: none;"></div>
 
-            <button type="button" class="btn btn-light">
-                <a href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
+            <button type="button" class="btn btn-light rounded-pill bg_cl_primary m-2">
+                <a class="text-decoration-none text-dark" href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
             </button>
 
             
