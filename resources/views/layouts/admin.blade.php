@@ -38,7 +38,11 @@
                             
                             <div class="d-flex flex-column justify-content-center align-items-center">
                                 <div class="containerImg ">
-                                    <img class="profile_img_nav mt-3 rounded-circle" src="/storage/{{$user->img}}" alt={{$user->name}}>
+                                    @if ($user->img === null)
+                                        <img class="profile_img_nav mt-3 rounded-circle" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
+                                    @else
+                                        <img class="profile_img_nav mt-3 rounded-circle" src="/storage/{{$user->img}}" alt={{$user->name}}>
+                                    @endif
                                 </div>
                                <h4 class="text-dark mt-3">{{ $user->name }}</h4>
                                <div class="text-dark">{{$user->email}}</div>
