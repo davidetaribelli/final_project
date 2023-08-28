@@ -7,7 +7,7 @@
         <h1 class="p-0">Il tuo Super Profilo</h1>
         {{-- img. --}}
         <div class="col-6 p-0">
-            <img class="rounded-start w-100 shadow bg-body" src={{$user->img}} alt={{$user->name}}>
+            <img class="rounded-start w-100 shadow bg-body" src="/storage/{{$user->img}}" alt={{$user->name}}>
         </div>
 
         {{-- dati personali. --}}
