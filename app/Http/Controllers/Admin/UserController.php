@@ -84,15 +84,14 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        // dd($request);
 
         $data = $request-> validated(); 
-        
-        // dd($data);
 
-        $img_path = Storage::put('uploads', $data['img']);
-        $data['img'] = $img_path;
-        // $user = new User();
+        if ($request->hasFile("img")) {
+            $img_path = Storage::put('uploads', $request->file('img'));
+            $data['img'] = $img_path;
+        }
+
         $user->fill($data);        
         $user->update();
 
