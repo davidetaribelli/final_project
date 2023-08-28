@@ -59,21 +59,30 @@
         </div>
 
         {{-- genere --}}
-        <div class="col-6 mt-5 p-0">
+        <div class="col-12 mt-5 p-0">
             <h3>Generi Musicali:</h3>
                 @foreach ($user->genres as $genre)
                   <h1 class="list-unstyled text-white fs-5 text-decoration-none badge btnColor">{{$genre->name}}</h1>  
                 @endforeach
+            </ul>
         </div>
 
+        {{-- esperienza. --}}
+        <div class="col-12 mt-5 p-0">
+            <h3>Esperienza e descrizione personale</h3>
+
+            <div>
+                {{  $user->experience }}
+            </div>
+        </div>
 
         {{-- bottone --}}
-        <div class="col-3 p-0">
+        {{-- <div class="col-3 p-0">
             <button type="button" class="mt-4 btn btn-outline-dark">
                 <a class="btn btn-light" href="{{route("admin.users.edit", $user->id)}}">Modifica il profilo</a>                       
             </button>
         </div>
-       
+        --}}
     </div>
 </div>
 

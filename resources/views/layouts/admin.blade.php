@@ -28,53 +28,77 @@
 
 <body>
     <div id="app">
-        <div class="container-fluid vh-100">
-            <div class="row h-100">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
+        <div class="container-fluid vh-100 bg_primary">
+            <div class="row vh-100">
+     
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 sidebar rounded-5 m-3 bg_navbar">
                     <div class="position-sticky pt-3">
-                        <ul class="nav flex-column">
+                        <div class="nav flex-column">
 
-                             <h3 class="text-center text-white">AudioVibe</h3>
+                            
                             <div class="d-flex flex-column justify-content-center align-items-center">
                                 <div class="containerImg ">
                                     <img class="profile_img_nav mt-3 rounded-circle" src="/storage/{{$user->img}}" alt={{$user->name}}>
                                 </div>
-                               <h4 class="text-white mt-3">{{ $user->name }}</h4>
-                               <div class="text-white">{{$user->email}}</div>
+                               <h4 class="text-dark mt-3">{{ $user->name }}</h4>
+                               <div class="text-dark">{{$user->email}}</div>
                             </div> 
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/">
-                                    <i class="fa-solid fa-home-alt fa-lg fa-fw"></i> Home
+                            
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center" href="/">
+                                    {{-- <i class="fa-solid fa-home-alt fa-lg fa-fw text-dark"></i> Home --}}
+                                    Home
                                 </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-secondary' : '' }}" href="{{route('admin.dashboard')}}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
+                            </div>
+                            
+                        
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg_selected_button' : '' }}" href="{{route('admin.dashboard')}}">
+                                    Dashboard
                                 </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.users.index' ? 'bg-secondary' : '' }}" href="{{ route('admin.users.index') }}">
-                                    <i class="fa-solid fa-user"></i> Profilo
+                            </div>
+                            
+                        
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'bg_selected_button' : '' }}" href="{{ route('admin.users.index') }}">
+                                    Profilo
                                 </a>
-                            </li>
+                            </div>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
+                                    Sponsor
+                                </a>
+                            </div>
+
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
+                                    Messaggi
+                                </a>
+                            </div>
+
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
+                                    Voti
+                                </a>
+                            </div>
+                            
+                         
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-sign-out-alt fa-lg fa-fw"></i> {{ __('Logout') }}
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                            </li>
+                            </div>
 
-                        </ul>
+                        </div>
 
                     </div>
                 </nav>
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-9 px-md-4">
                     @yield('content')
                 </main>
             </div>

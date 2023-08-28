@@ -5,6 +5,31 @@
 .bg_log_reg{
     background-color: rgba(36,39,52,0.3)
 }
+.bg_primary{
+    background: #fefefe;
+    background: -webkit-linear-gradient(116deg, #fefefe 0%, #5c75d1 100%);
+    background: linear-gradient(116deg, #fefefe 0%, #5c75d1 100%);
+}
+
+.bg_secondary{
+    background: #fefefe;
+    background: -webkit-linear-gradient(304deg, #fefefe 0%, #5c75d1 100%);
+    background: linear-gradient(304deg, #fefefe 0%, #5c75d1 100%);
+}
+
+.bg_navbar{
+    -webkit-box-shadow: 2.5px 3px 12px 9px #8999da;
+    -moz-box-shadow: 2.5px 3px 12px 9px #8999da;
+    box-shadow: 2.5px 3px 12px 9px #8999da;
+}
+
+.bg_cl_primary{
+    background-color:#5c75d1e0 ;
+}
+
+.bg_selected_button{
+    background-color:#D9D9D9 ;
+}
 
 // LOGO
 
