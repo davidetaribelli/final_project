@@ -1,6 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function(event) {
+            const passwordInput = document.getElementById("password");
+            const confirmPasswordInput = document.getElementById("password-confirm");
+            const emailInput = document.getElementById("email");
+            const nameInput = document.getElementById("name");
+            const surnameInput = document.getElementById("surname");
+
+            let errors = [];
+
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                errors.push("Le password non corrispondono.");
+            }
+
+            if (!emailInput.value.includes("@")) {
+                errors.push("L'indirizzo email non è valido.");
+            }
+
+            if (nameInput.value.length < 2) {
+                errors.push("Il nome deve avere almeno 2 caratteri.");
+            }
+
+            if (surnameInput.value.length < 2) {
+                errors.push("Il cognome deve avere almeno 2 caratteri.");
+            }
+
+            if (errors.length > 0) {
+                event.preventDefault();
+
+                const errorContainer = document.getElementById("error-container");
+                errorContainer.innerHTML = "";
+
+                errors.forEach(function(error) {
+                    const errorDiv = document.createElement("div");
+                    errorDiv.className = "alert alert-danger";
+                    errorDiv.textContent = error;
+                    errorContainer.appendChild(errorDiv);
+                });
+            }
+        });
+    });
+</script>
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-5">
@@ -9,6 +54,7 @@
                     <div class="col-6 d-flex justify-content-center">
                         <h2 class="my-5">Register</h2>
                     </div>
+                    <div id="error-container"></div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
