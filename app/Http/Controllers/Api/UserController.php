@@ -12,9 +12,11 @@ class UserController extends Controller
     {
         $users= User::with('genres', 'sponsors', 'votes', 'reviews')->paginate(6);
 
-        return response()->json([
-            'success' => true,
-            'results' => $users,
-        ]);
+        $response = [
+            "results" => $users,
+            "status" => true,
+        ];
+
+        return response()->json($response);
     }
 }
