@@ -24,8 +24,8 @@ class User extends Authenticatable
         return $this->belongsTo(Message::class);
     }
 
-    public function review(){
-        return $this->belongsTo(Review::class);
+    public function reviews(){
+        return $this->hasMany(Review::class);
     }
 
     public function votes(){
