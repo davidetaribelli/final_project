@@ -10,14 +10,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('auth.login'); 
-});
-
-Route::get('/register', function () {
-    return view('auth.register'); 
-});
-
 Route::middleware(['auth'])
     ->prefix('admin') //definisce il prefisso "admin/" per le rotte di questo gruppo
     ->name('admin.') //definisce il pattern con cui generare i nomi delle rotte cioè "admin.qualcosa"
