@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users= User::with('genres', 'sponsors', 'votes', 'reviews')->paginate(6);
+        $users= User::with('genres', 'sponsors', 'votes', 'reviews')->get();
 
         $response = [
             "results" => $users,
