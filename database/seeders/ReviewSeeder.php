@@ -30,6 +30,27 @@ class ReviewSeeder extends Seeder
                 'comment' => 'Ottimo lavoro!!',
                 'date' => Carbon::now(),
             ],
+            [
+                'user_id' => 1,
+                'name' => 'Davide',
+                'email' => 'davide23@gmail.com',
+                'comment' => 'E` stato fantastico!',
+                'date' => Carbon::now(),
+            ],
+            [
+                'user_id' => 2,
+                'name' => 'Mathias',
+                'email' => 'mathi20@gmail.com',
+                'comment' => 'Ottimo lavoro!!',
+                'date' => Carbon::now(),
+            ],
+            [
+                'user_id' => 3,
+                'name' => 'Giada',
+                'email' => 'Giadapir@gmail.com',
+                'comment' => 'E` stato fantastico!',
+                'date' => Carbon::now(),
+            ],
         ];
 
         foreach ($reviews as $review){
