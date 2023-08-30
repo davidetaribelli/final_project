@@ -2,6 +2,16 @@
 
 @section('content')
 
+{{-- avviso se id in url è diverso da id di auth --}}
+<div class="container">
+    @if (isset($IDerror))
+        <div class="alert alert-danger">
+            {{ $IDerror }}
+        </div>
+    @endif
+
+</div>
+
 <h2 class="text-white fw-bold">Crea il tuo profilo</h2>
 
 <div class="container-fluid mt-4">

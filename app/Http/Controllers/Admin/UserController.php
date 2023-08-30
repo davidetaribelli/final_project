@@ -67,12 +67,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         $user = Auth::user();
         $genres = Genre::all();
 
-        return view('admin.users.edit', compact("user","genres"));
+        if ($user->id == $id) {
+            return view('admin.users.edit', compact("user","genres"));
+        } else {
+            // dd($id, $user);
+            return view('admin.users.edit', compact("user","genres"))->with('IDerror', 'non hai il permesso di accedere, il tuo url e stato modificato');
+        }
+
+        
     }
 
     /**
