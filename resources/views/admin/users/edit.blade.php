@@ -5,9 +5,16 @@
 {{-- avviso se id in url è diverso da id di auth --}}
 <div class="container">
     @if (isset($IDerror))
-        <div class="alert alert-danger">
+    {{-- versione con messaggio html e classi bootsap --}}
+        {{-- <div class="alert alert-danger">
             {{ $IDerror }}
-        </div>
+        </div> --}}
+        {{-- versione popup js  --}}
+        <script>
+            window.onload = function() {
+                alert("{{ $IDerror }}");
+            };
+        </script>
     @endif
 
 </div>
