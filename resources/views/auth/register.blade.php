@@ -48,20 +48,20 @@
 </script>
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card rounded-5 bg_log_reg">
+        <div class="col-md-10 col-lg-6">
+            <div class="card rounded-5 bg_secondary border-0">
                 <div class="card-body d-flex justify-content-center align-items-center flex-wrap">
                     <div class="col-6 d-flex justify-content-center">
-                        <h2 class="my-5 text-white fw-bold badge btnColor fs-5">Register</h2>
+                        <h2 class="my-3 text-white fw-bold badge btnColor fs-5">Register</h2>
                     </div>
                     <div id="error-container"></div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="mb-4 row">
+                        <div class="mb-2 row">
                             <label for="name" class="col-md-6 col-form-label text-md-right">{{ __('Name') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="mb-2 row">
                                 <input id="name" type="text" class="rounded-4 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -72,10 +72,10 @@
                             </div>
                         </div>
 
-                        <div class="mb-4 row">
+                        <div class="mb-2 row">
                             <label for="surname" class="col-md-6 col-form-label text-md-right">{{ __('Surname') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="mn-2 row">
                                 <input id="surname" type="text" class="rounded-4 form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
                                 @error('surname')
@@ -86,9 +86,9 @@
                             </div>
                         </div>
 
-                        <div class="mb-4 row">
+                        <div class="mb-2 row">
                             <label for="region" class="col-md-6 col-form-label text-md-right">Regione</label>
-                            <div class="col-md-6">
+                            <div class="mb-2 row">
                                 <select class="rounded-4 form-select @error('region') is-invalid @enderror" aria-label="Default select example" name="region">
                                     <option value="" selected>Seleziona la regione</option>
                                     @foreach (config('regions') as $region)
@@ -104,10 +104,10 @@
                             
                         </div>
 
-                        <div class="mb-4 row">
+                        <div class="mb-2 row">
                             <label for="email" class="col-md-6 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="mb-2 row">
                                 <input id="email" type="email" class="rounded-4 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
@@ -118,10 +118,10 @@
                             </div>
                         </div>
 
-                        <div class="mb-4 row">
+                        <div class="mb-2 row">
                             <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="mb-2 row">
                                 <input id="password" type="password" class="rounded-4 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
@@ -132,17 +132,17 @@
                             </div>
                         </div>
 
-                        <div class="mb-4 row">
+                        <div class="mb-2 row">
                             <label for="password-confirm" class="col-md-6 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="mb-2 row">
                                 <input id="password-confirm" type="password" class="rounded-4 form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
-                        <div class="mb-4 row mb-0">
+                        <div class="mb-2 row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-dark p-2 rounded-5">
+                                <button type="submit" class="btn btnColor text-white fw-bold">
                                     <span class="mx-3">{{ __('Register') }}</span>
                                 </button>
                             </div>

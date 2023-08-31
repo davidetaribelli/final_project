@@ -35,7 +35,7 @@
 
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-10 col-lg-6">
             <div class="card rounded-5 bg_secondary border-0">
                 <div class="card-body d-flex justify-content-center align-items-center flex-wrap">
                     <div class="col-6 d-flex justify-content-center">
@@ -96,7 +96,7 @@
 
                     <div class="col-12 mb-4">
                         <div class="col-12 d-flex justify-content-center align-items-center">
-                            <span>don't have an account yet? <a class="nav-link ms-2 text-center badge btnColor" href="{{ route('register') }}">create one</a> </span>
+                            <span class="ms-2">don't have an account yet? <a class="nav-link ms-2 text-center badge btnColor" href="{{ route('register') }}">create one</a> </span>
                         </div>
                     </div>
                     <div class="col-12 mb-4 d-flex justify-content-center">
