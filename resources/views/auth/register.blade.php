@@ -52,7 +52,7 @@
             <div class="card rounded-5 bg_log_reg">
                 <div class="card-body d-flex justify-content-center align-items-center flex-wrap">
                     <div class="col-6 d-flex justify-content-center">
-                        <h2 class="my-5">Register</h2>
+                        <h2 class="my-5 text-white fw-bold badge btnColor fs-5">Register</h2>
                     </div>
                     <div id="error-container"></div>
                     <form method="POST" action="{{ route('register') }}">

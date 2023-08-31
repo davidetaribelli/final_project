@@ -35,11 +35,11 @@
 
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card rounded-5 bg_log_reg">
+        <div class="col-md-6">
+            <div class="card rounded-5 bg_secondary border-0">
                 <div class="card-body d-flex justify-content-center align-items-center flex-wrap">
                     <div class="col-6 d-flex justify-content-center">
-                        <h2 class="my-5">Login</h2>
+                        <h2 class="my-5 text-white fw-bold badge btnColor fs-5">Login</h2>
                     </div>
                     <div id="error-container"></div>
                     <form method="POST" action="{{ route('login') }}">
@@ -87,22 +87,24 @@
 
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-dark">
+                                <button type="submit" class="btn btnColor text-white fw-bold">
                                     {{ __('Login') }}
                                 </button>
                             </div>
                         </div>
                     </form>
 
-                    <div class="mb-4 row">
-                        <div class="col ">
-                            <span class="d-flex">don't have an account yet? <a class="nav-link ms-2" href="{{ route('register') }}">  create one </a> </span>
-                            @if (Route::has('password.request'))
+                    <div class="col-12 mb-4">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <span>don't have an account yet? <a class="nav-link ms-2 text-center badge btnColor" href="{{ route('register') }}">create one</a> </span>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 d-flex justify-content-center">
+                        @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
-                                @endif
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
