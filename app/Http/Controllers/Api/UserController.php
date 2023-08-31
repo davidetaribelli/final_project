@@ -19,4 +19,15 @@ class UserController extends Controller
 
         return response()->json($response);
     }
+
+    public function show($id){
+        $users = User::with("genres", 'sponsors', 'votes', 'reviews')->find($id);
+
+        $response = [
+            "success" => true,
+            "results" => $users
+        ];
+
+        return response()->json($response);
+    }
 }
