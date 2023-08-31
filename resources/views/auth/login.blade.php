@@ -2,6 +2,36 @@
 
 @section('content')
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function(event) {
+            const passwordInput = document.getElementById("password");
+            const emailInput = document.getElementById("email");
+
+            let errors = [];
+
+            if (!emailInput.value.includes("@")) {
+                errors.push("L'indirizzo email non è valido.");
+            }
+
+            if (errors.length > 0) {
+                event.preventDefault();
+
+                const errorContainer = document.getElementById("error-container");
+                errorContainer.innerHTML = "";
+
+                errors.forEach(function(error) {
+                    const errorDiv = document.createElement("div");
+                    errorDiv.className = "alert alert-danger";
+                    errorDiv.textContent = error;
+                    errorContainer.appendChild(errorDiv);
+                });
+            }
+        });
+    });
+</script>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
@@ -11,6 +41,7 @@
                     <div class="col-6 d-flex justify-content-center">
                         <h2 class="my-5">Login</h2>
                     </div>
+                    <div id="error-container"></div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
