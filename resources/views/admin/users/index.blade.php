@@ -2,22 +2,25 @@
 
 @section('content')
 
-<div class="container-fluid mt-2">
-    <div class="row">
+<div class="container mt-2">
+    <div class="row justify-content-center">
         {{-- dati personali. --}}
 
         <div class="mt-4 row g-0">
-            <div class="col-sm-6 col-md-6">
-                <h3 class="text-white fw-bold">PRESENTAZIONE</h3>
-                <div class="my-4">{{  $user->experience }}</div>
-            </div>
-            <div class="col-6 col-md-6 d-flex flex-column align-items-center">
-                    <h3 class="text-white fw-bold">VOTI</h3>
+            <div class="col-12 d-xl-flex">
+                <div class="col-sm-12 col-xl-6">
+                    <h3 class="text-white fw-bold">PRESENTAZIONE</h3>
+                    <div class="my-4">{{  $user->experience }}</div>
+                </div>
+                
+                <div class="col-sm-12 col-xl-6 d-flex">
+                    <div class="col-sm-3 col-md-6 p-2">
+                        <h3 class="text-white fw-bold">VOTI</h3>
                     @foreach ($user->votes as $vote)
                     @php
                         $numeroStelle = $vote->vote;
                     @endphp
-                    <div class="badge btnColor stelle fs-5 my-4 p-2">
+                    <div class="badge btnColor stelle fs-5 my-4">
                         @for ($i = 1; $i <= 5; $i++)
                             @if ($i <= $numeroStelle)
                             <i class="fa-solid fa-star" style="color: #D9D9D9;"></i>
@@ -27,24 +30,19 @@
                         @endfor
                     </div>
                     @endforeach
-            </div>
-        </div>
-        
-
-        <div class="my-4">
-            <div class="row text-center">
-                <div class="col-sm-6 col-md-6"></div>
-                <div class="col-6 col-md-6">
+                </div>
+                <div class="col-sm-3 col-md-6 p-2">
                     <h3 class="text-white fw-bold">CACHET</h3>
-                    <div class="badge btnColor widthBadge fs-5 text-start my-4">
+                    <div class="badge btnColor fs-5 my-4 p-2">
                         {{$user->cachet}}€
                     </div>
+                </div>
                 </div>
             </div>
         </div>
 
         {{-- dati personali. --}}
-        <div class="col-6 mt-5 p-0">
+        <div class="col-xl-12 mt-5 p-0">
             <div class="col-md-6 d-flex flex-column">
                 <h3 class="text-white fw-bold">DATI PERSONALI</h3>
                 <ul class="list-group list-group-flush rounded-4 my-4">
@@ -65,7 +63,7 @@
         </div>
 
         {{-- bottone --}} 
-        <div class="col-10 d-flex justify-content-end p-0 ">
+        <div class="col-12 d-flex justify-content-md-start justify-content-xl-center p-0 ">
             <button type="button" class="mt-4 btn btn-light btnColor border-0">
                 <a class="text-decoration-none text-white fs-5 fw-bold" href="{{route("admin.users.edit", $user->id)}}">Modifica il profilo</a>                       
             </button>
