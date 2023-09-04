@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\VoteController;
 use Illuminate\Http\Request;
@@ -26,3 +27,4 @@ Route::get("/users/{id}", [UserController::class, "show"]);
 
 Route::post('/reviews', [ReviewController::class, 'post']);
 Route::post('/votes', [VoteController::class, 'addVote']);
+Route::post('/messages', [MessageController::class, 'Message']);
