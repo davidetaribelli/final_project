@@ -62,6 +62,7 @@
                 @endforeach
         </div>
 
+
         {{-- bottone --}} 
         <div class="col-12 d-flex justify-content-md-start justify-content-xl-center p-0 ">
             <button type="button" class="mt-4 btn btn-light btnColor border-0">

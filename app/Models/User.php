@@ -20,8 +20,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Sponsor::class);
     }
 
-    public function message(){
-        return $this->belongsTo(Message::class);
+    public function messages(){
+        return $this->hasMany(Message::class);
     }
 
     public function reviews(){

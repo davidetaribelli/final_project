@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.users.message' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="/user/message">
                                     Messaggi
                                 </a>
                             </div>
