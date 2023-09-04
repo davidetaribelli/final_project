@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\VoteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,4 @@ Route::get("/users", [UserController::class, "index"]);
 Route::get("/users/{id}", [UserController::class, "show"]);
 
 Route::post('/reviews', [ReviewController::class, 'post']);
+Route::post('/votes', [VoteController::class, 'addVote']);
