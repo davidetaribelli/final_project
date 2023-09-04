@@ -105,14 +105,14 @@
                             </div>
 
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
+                                <a class="nav-link text-dark text-center">
                                     Messaggi
                                 </a>
                             </div>
 
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
                                 <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
-                                    Voti
+                                    Recensioni e voti
                                 </a>
                             </div>
                             
