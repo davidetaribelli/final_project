@@ -15,6 +15,7 @@
     <table class="table table-borderless ">
         <thead>
             <tr>
+                <th class="fw-lighter"></th>
                 <th class="fw-lighter">Name</th>
                 <th class="fw-lighter">Message</th>
                 <th class="fw-lighter">Email</th>
@@ -23,6 +24,11 @@
         <tbody>
             @foreach ($user->messages as $message)
             <tr>
+                <td>
+                    <small class="badge text-black">
+                        {{$message->created_at->format('d/m/y')}}
+                    </small>
+                </td>
                 <td>{{$message->name}}</td>
                 <td>{{$message->message}}</td>
                 <td>{{$message->email}}</td>
