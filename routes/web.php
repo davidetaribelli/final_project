@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
 use App\Http\Controllers\Admin\UserController;
-
+use App\Http\Controllers\Admin\MessageController;
+use App\Models\Message;
 
 /* ... */
 
@@ -30,6 +31,10 @@ Route::middleware(['auth'])
         Route::get('/user/message', function () {
          return view('admin.users.message');
         })->name('user.message');
+
+        Route::resource('singleMessage', MessageController::class);
+
+
         
 });
 
