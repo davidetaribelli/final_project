@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\StatsController;
 use App\Models\Message;
 
 /* ... */
@@ -34,6 +35,9 @@ Route::middleware(['auth'])
 
         Route::resource('singleMessage', MessageController::class);
 
+        Route::get('/user/stats', function () {
+            return view('admin.users.stats');
+           })->name('user.stats');
 
         Route::get('/user/review', function () {
             return view('admin.users.review_vote');

@@ -21,6 +21,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -74,6 +75,12 @@
                                     <li class="nav-item">
                                         <a class="nav-link text-white fs-3 fw-bold" href="{{route('admin.user.review')}}">
                                             Recensioni e voti
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-3 fw-bold" href="{{route('admin.user.stats')}}">
+                                            Statistiche
                                         </a>
                                     </li>
                                 </ul>
@@ -131,6 +138,12 @@
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
                                 <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.review')}}">
                                     Recensioni e voti
+                                </a>
+                            </div>
+
+                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.user.stats' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.stats')}}">
+                                    Statistiche
                                 </a>
                             </div>
                             
