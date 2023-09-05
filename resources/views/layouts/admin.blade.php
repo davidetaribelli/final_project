@@ -58,6 +58,24 @@
                                             Profilo
                                         </a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-3 fw-bold" href="{{route('admin.dashboard')}}">
+                                            Sponsor
+                                        </a>
+                                    </li>
+        
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-3 fw-bold" href="{{route('admin.user.message')}}">
+                                            Messaggi
+                                        </a>
+                                    </li>
+        
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-3 fw-bold" href="{{route('admin.user.review')}}">
+                                            Recensioni e voti
+                                        </a>
+                                    </li>
                                 </ul>
                              </div>
                         </div>
@@ -81,7 +99,7 @@
                             </div>
                             
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center" href="/">
+                                <a class="nav-link text-dark text-center" href="http://localhost:5174/">
                                     Home
                                 </a>
                             </div>
@@ -105,13 +123,13 @@
                             </div>
 
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.users.message' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.message')}}">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.user.message' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.message')}}">
                                     Messaggi
                                 </a>
                             </div>
 
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
+                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.review')}}">
                                     Recensioni e voti
                                 </a>
                             </div>

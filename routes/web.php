@@ -30,6 +30,10 @@ Route::middleware(['auth'])
         Route::get('/user/message', function () {
          return view('admin.users.message');
         })->name('user.message');
+
+        Route::get('/user/review', function () {
+            return view('admin.users.review_vote');
+           })->name('user.review');
         
 });
 
