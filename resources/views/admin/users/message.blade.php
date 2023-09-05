@@ -12,13 +12,13 @@
     <p>Nessun messaggio ricevuto per eventi.</p>
 </div>
 @else
-    <table class="table table-borderless ">
+    <table class="table table-borderless">
         <thead>
             <tr>
-                <th class="fw-lighter"></th>
-                <th class="fw-lighter">Name</th>
-                <th class="fw-lighter">Message</th>
-                <th class="fw-lighter">Email</th>
+                <th class="fw-bolder"></th>
+                <th class="fw-bolder">Name</th>
+                <th class="fw-bolder">Message</th>
+                <th class="fw-bolder">Email</th>
             </tr>
         </thead>
         <tbody>

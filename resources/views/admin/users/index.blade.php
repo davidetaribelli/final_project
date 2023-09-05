@@ -15,28 +15,27 @@
                 
                 <div class="col-sm-12 col-xl-6 d-flex">
                     <div class="col-sm-3 col-md-6 p-2">
-                        <h3 class="text-white fw-bold">VOTI</h3>
-                    @foreach ($user->votes as $vote)
-                    @php
-                        $numeroStelle = $vote->vote;
-                    @endphp
-                    <div class="badge btnColor stelle fs-5 my-4">
-                        @for ($i = 1; $i <= 5; $i++)
-                            @if ($i <= $numeroStelle)
-                            <i class="fa-solid fa-star" style="color: #D9D9D9;"></i>
-                            @else
-                            <i class="fa-solid fa-star" style="color: #000000;"></i>
-                            @endif
-                        @endfor
+                        <h3 class="text-white fw-bold">MEDIA VOTI</h3>
+                        @php
+                            $averageVote = $user->votes->avg('vote');
+                            $averageStars = round($averageVote); // Arrotonda alla stella più vicina
+                        @endphp
+                        <div class="badge btnColor fs-5 my-4 p-2">
+                            @for ($i = 1; $i <= 5; $i++)
+                                @if ($i <= $averageStars)
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                @else
+                                    <i class="fa-solid fa-star" style="color: #000000;"></i>
+                                @endif
+                            @endfor
+                        </div>
                     </div>
-                    @endforeach
-                </div>
-                <div class="col-sm-3 col-md-6 p-2">
-                    <h3 class="text-white fw-bold">CACHET</h3>
-                    <div class="badge btnColor fs-5 my-4 p-2">
-                        {{$user->cachet}}€
+                    <div class="col-sm-3 col-md-6 p-2">
+                        <h3 class="text-white fw-bold">CACHET</h3>
+                        <div class="badge btnColor fs-5 my-4 p-2">
+                            {{$user->cachet}}€
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>

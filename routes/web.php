@@ -35,6 +35,9 @@ Route::middleware(['auth'])
         Route::resource('singleMessage', MessageController::class);
 
 
+        Route::get('/user/review', function () {
+            return view('admin.users.review_vote');
+           })->name('user.review');
         
 });
 
