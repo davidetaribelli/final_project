@@ -27,20 +27,21 @@
 <script>
         // Recupera i dati dei messaggi dal controller o da dove li hai
         let messages = {!! json_encode($user->messages) !!}; // Converte i dati dei messaggi in JSON
-
+        console.log(messages);
         // Estrai le date e i messaggi dai dati
-        var dates = messages.map(function(message) {
+        let dates = messages.map(function(message) {
             return message.date;
         });
 
-        var messageCounts = messages.map(function(message) {
+        let messageCounts = messages.map(function(message) {
             return message.message;
         });
+        console.log(messageCounts)
 
         // Configura il contesto del grafico
-        var ctx = document.getElementById('graficMessagges').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'line', // Tipo di grafico (puoi cambiare a 'line' o altro)
+        let ctx = document.getElementById('graficMessagges').getContext('2d');
+        let myChart = new Chart(ctx, {
+            type: 'bar', // Tipo di grafico (puoi cambiare a 'line' o altro)
             data: {
                 labels: dates, // Etichette sull'asse x (date dei messaggi)
                 datasets: [{
