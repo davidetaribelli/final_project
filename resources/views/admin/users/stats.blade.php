@@ -8,79 +8,90 @@
 <div class="container">
     <div class="row">
         <div class="col-12 d-flex flex-wrap">
-            <div class="col-5 mx-2">
+            <div class="col-6 mx-2">
                 <canvas id="graficMessagges"></canvas>
             </div>
 
-            <div class="col-5 mx-2">
+            {{-- <div class="col-5 mx-2">
                 <canvas id="graficReviews"></canvas>
             </div>
 
             <div class="col-5 mx-2">
                 <canvas id="graficVotes"></canvas>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
 
 
 <script>
-    // Ottieni i dati dal controller
-    var messsages = {!! json_encode($user->messagges) !!};
-    var reviews = {!! json_encode($user->reviews) !!};
-    var votes = {!! json_encode($user->votes) !!};
+        // Recupera i dati dei messaggi dal controller o da dove li hai
+        let messages = {!! json_encode($user->messages) !!}; // Converte i dati dei messaggi in JSON
 
-    // Crea un grafico per i messaggi
-    var messaggesChart = new Chart(document.getElementById("graficMessagges"), {
-        type: 'bar', // Puoi scegliere il tipo di grafico desiderato
-        data: {
-            labels: [], // Inserisci le etichette delle date qui
-            datasets: [{
-                label: 'Messagges',
-                data: {!! json_encode($user->messagges) !!}, // Inserisci i dati dei messaggi qui
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Colore di sfondo del grafico
-                borderColor: 'rgba(75, 192, 192, 1)', // Colore del bordo del grafico
-                borderWidth: 1
-            }]
-        },
-        options: {
-            // Personalizza le opzioni del grafico, ad esempio titolo, legenda, ecc.
-        }
-    });
+        // Estrai le date e i messaggi dai dati
+        var dates = messages.map(function(message) {
+            return message.date;
+        });
 
-    var reviewsChart = new Chart(document.getElementById("graficReviews"), {
-        type: 'bar', // Puoi scegliere il tipo di grafico desiderato
-        data: {
-            labels: [], // Inserisci le etichette delle date qui
-            datasets: [{
-                label: 'Reviews',
-                data:  {!! json_encode($user->reviews) !!}, // Inserisci i dati dei messaggi qui
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', 
-                borderColor: 'rgba(75, 192, 192, 1)', 
-                borderWidth: 1
-            }]
-        },
-        options: {
+        var messageCounts = messages.map(function(message) {
+            return message.message;
+        });
+
+        // Configura il contesto del grafico
+        var ctx = document.getElementById('graficMessagges').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line', // Tipo di grafico (puoi cambiare a 'line' o altro)
+            data: {
+                labels: dates, // Etichette sull'asse x (date dei messaggi)
+                datasets: [{
+                    label: 'Messaggi', // Etichetta del dataset
+                    data: messageCounts, // Dati da visualizzare sul grafico
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Colore dell'area del grafico
+                    borderColor: 'rgba(75, 192, 192, 1)', // Colore del bordo
+                    borderWidth: 1 // Larghezza del bordo
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    // var reviewsChart = new Chart(document.getElementById("graficReviews"), {
+    //     type: 'bar', // Puoi scegliere il tipo di grafico desiderato
+    //     data: {
+    //         labels: [], // Inserisci le etichette delle date qui
+    //         datasets: [{
+    //             label: 'Reviews',
+    //             data:  {!! json_encode($user->reviews) !!}, // Inserisci i dati dei messaggi qui
+    //             backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+    //             borderColor: 'rgba(75, 192, 192, 1)', 
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
             
-        }
-    });
+    //     }
+    // });
 
-    var votesChart = new Chart(document.getElementById("graficVotes"), {
-        type: 'bar', // Puoi scegliere il tipo di grafico desiderato
-        data: {
-            labels: [], // Inserisci le etichette delle date qui
-            datasets: [{
-                label: 'Votes',
-                data: {!! json_encode($user->votes) !!}, // Inserisci i dati dei messaggi qui
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', 
-                borderColor: 'rgba(75, 192, 192, 1)', 
-                borderWidth: 1
-            }]
-        },
-        options: {
-            // Personalizza le opzioni del grafico, ad esempio titolo, legenda, ecc.
-        }
-    });
+    // var votesChart = new Chart(document.getElementById("graficVotes"), {
+    //     type: 'bar', // Puoi scegliere il tipo di grafico desiderato
+    //     data: {
+    //         labels: [], // Inserisci le etichette delle date qui
+    //         datasets: [{
+    //             label: 'Votes',
+    //             data: {!! json_encode($user->votes) !!}, // Inserisci i dati dei messaggi qui
+    //             backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+    //             borderColor: 'rgba(75, 192, 192, 1)', 
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         // Personalizza le opzioni del grafico, ad esempio titolo, legenda, ecc.
+    //     }
+    // });
 
     
 
