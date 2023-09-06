@@ -31,10 +31,10 @@
                     </small>
                 </td>
                 <td>{{$message->name}}</td>
-                <td>{{$message->message}}</td>
+                <td class="text-truncate widthTd">{{$message->message}}</td>
                 <td>{{$message->email}}</td>
                 <td>
-                    <a href="{{ route('admin.singleMessage.show', $message) }}">Visualizza Messaggio Completo</a>
+                    <a class="btn btn-danger" href="{{ route('admin.singleMessage.show', $message) }}">Visualizza Messaggio Completo</a>
                 </td>
             </tr>
             @endforeach
