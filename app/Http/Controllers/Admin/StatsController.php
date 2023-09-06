@@ -14,7 +14,6 @@ class StatsController extends Controller
     $messagges = Message::all();
     $reviews = Review::all();
     $votes = Vote::all();
-
     // Effettua il rendering della vista delle statistiche e passa i dati
     return view('statistiche.index', compact('messagges', 'reviews', 'votes'));
 }

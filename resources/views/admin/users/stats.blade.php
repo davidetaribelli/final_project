@@ -1,6 +1,8 @@
 @extends('layouts.admin')
+
 @php
-    $user = Auth::user();        
+    $user = Auth::user(); 
+    dd($user->votes);
 @endphp
 @section('content')
 <h3 class="fw-bold text-white">Statistiche</h3>
@@ -30,7 +32,6 @@
         //// MESSAGGI GRAFICO /////
         // Recupera i dati dei messaggi dal controller o da dove li hai
         let messages = {!! json_encode($user->messages) !!}; // Converte i dati dei messaggi in JSON
-        console.log(messages);
 
         // Crea un oggetto per conteggiare i messaggi per ciascuna data
         let messageCounts = {};
@@ -47,7 +48,6 @@
             });
 
 
-        console.log(messageCounts);
 
         // Estrai le date e i conteggi dai dati
         let dates = Object.keys(messageCounts);
@@ -80,7 +80,6 @@
 
         // Recupera i dati dei messaggi dal controller o da dove li hai
         let reviews = {!! json_encode($user->reviews) !!}; // Converte i dati dei messaggi in JSON
-        console.log(reviews);
 
         // Crea un oggetto per conteggiare i messaggi per ciascuna data
         let reviewCounts = {};
@@ -97,7 +96,6 @@
             });
         
         
-        console.log(reviewCounts);
        
              
         // Estrai le date e i conteggi dai dati
@@ -140,7 +138,7 @@
         votes.forEach(function(vote) {
             let date = new Date(vote.created_at); // Converti la data in un oggetto Data
             let formattedDate = date.toLocaleDateString(); // Ottieni la data formattata senza l'orario
-        
+            
             if (!voteCounts[formattedDate]) {
                 voteCounts[formattedDate] = 0;
             }
@@ -148,7 +146,6 @@
             });
         
         
-        console.log(voteCounts);
        
              
         // Estrai le date e i conteggi dai dati

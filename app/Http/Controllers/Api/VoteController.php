@@ -13,11 +13,13 @@ class VoteController extends Controller
     // Estrarre i dati dalla richiesta Vue.js
     $userId = $request->input('user_id');
     $voteId = $request->input('vote_id');
+    $date = $request->date('date');
 
     // Aggiungi una nuova voce nella tabella ponte
     DB::table('user_vote')->insert([
         'user_id' => $userId,
         'vote_id' => $voteId,
+        'date' => $date,
     ]);
 
     // Restituisci una risposta di successo o qualsiasi altra risposta necessaria
