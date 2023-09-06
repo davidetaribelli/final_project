@@ -19,6 +19,7 @@
                 <th class="fw-bolder">Name</th>
                 <th class="fw-bolder">Message</th>
                 <th class="fw-bolder">Email</th>
+                <th class="fw-bolder"></th>
             </tr>
         </thead>
         <tbody>
