@@ -51,6 +51,8 @@
 
         // Estrai le date e i conteggi dai dati
         let dates = Object.keys(messageCounts);
+        dates.sort((a, b) => new Date(a) - new Date(b));
+
         let counts = Object.values(messageCounts);
 
         // Configura il contesto del grafico
@@ -100,6 +102,8 @@
              
         // Estrai le date e i conteggi dai dati
         let datesReview = Object.keys(reviewCounts);
+        datesReview.sort((a, b) => new Date(a) - new Date(b));
+
         let countsReview = Object.values(reviewCounts);
         
         // Configura il contesto del grafico
@@ -150,13 +154,14 @@
              
         // Estrai le date e i conteggi dai dati
         let datesVote = Object.keys(voteCounts);
+        datesVote.sort((a, b) => new Date(a) - new Date(b));
         console.log(datesVote)
         let countsVote = Object.values(voteCounts);
         
         // Configura il contesto del grafico
         let voteCtx = document.getElementById('graficVotes').getContext('2d');
         let myChartVote = new Chart(voteCtx, {
-            type: 'bar', // Tipo di grafico (puoi cambiare a 'line' o altro)
+            type: 'line', // Tipo di grafico (puoi cambiare a 'line' o altro)
             data: {
                 labels: datesVote, // Etichette sull'asse x (date dei messaggi)
                 datasets: [{
