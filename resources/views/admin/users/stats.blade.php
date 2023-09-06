@@ -2,7 +2,7 @@
 
 @php
     $user = Auth::user(); 
-    dd($user->votes);
+    // dd($user->votes);
 @endphp
 @section('content')
 <h3 class="fw-bold text-white">Statistiche</h3>
@@ -136,13 +136,13 @@
 
         // Itera attraverso i messaggi e conta i messaggi per ciascuna data
         votes.forEach(function(vote) {
-            let date = new Date(vote.created_at); // Converti la data in un oggetto Data
-            let formattedDate = date.toLocaleDateString(); // Ottieni la data formattata senza l'orario
+            let date = new Date(vote.pivot.date); // Converti la data in un oggetto Data
+            let dateVoteFormatted = date.toLocaleDateString(); // Ottieni la data formattata senza l'orario
             
-            if (!voteCounts[formattedDate]) {
-                voteCounts[formattedDate] = 0;
+            if (!voteCounts[dateVoteFormatted]) {
+                voteCounts[dateVoteFormatted] = 0;
             }
-            voteCounts[formattedDate]++;
+            voteCounts[dateVoteFormatted]++;
             });
         
         
@@ -150,6 +150,7 @@
              
         // Estrai le date e i conteggi dai dati
         let datesVote = Object.keys(voteCounts);
+        console.log(datesVote)
         let countsVote = Object.values(voteCounts);
         
         // Configura il contesto del grafico
