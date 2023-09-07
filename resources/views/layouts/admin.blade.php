@@ -30,8 +30,8 @@
 
 <body>
     <div id="app">
-        <div class="container-fluid bg_primary min-vh-100">
-            <div class="row justify-content-around">
+        <div class="container-fluid bg_primary min-vh-100 d-flex align-items-center">
+            <div class="row justify-content-around p-3">
 
                 {{-- BARRA PER MD E SM --}}
                 <nav class="navbar btnColor d-lg-none">
@@ -91,65 +91,53 @@
                 </nav>
 
                 {{-- BARRA PER LG --}}
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 sidebar rounded-5 bg_navbar d-none d-xl-block mt-3">
-                    <div class="position-sticky pt-3">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-3 sidebar d-none d-xl-block">
+                    <div class="position-sticky bg_navbar ">
                         <div class="nav flex-column">
-                            <div class="d-flex flex-column justify-content-center align-items-center">
-                                <div class="mb-3 d-flex justify-content-center">
-                                    @if ($user->img === null)
-                                        <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
-                                    @else
-                                        <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/{{$user->img}}" alt={{$user->name}}>
-                                    @endif
-                                </div>
-                               <h4 class="text-dark mt-3">{{ $user->name }}</h4>
-                               <div class="text-dark">{{$user->email}}</div>
-                            </div>
-                            
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center" href="http://localhost:5174/">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center" href="http://localhost:5174/">
                                     Home
                                 </a>
                             </div>
                             
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.dashboard')}}">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'nav-item ' : '' }}" href="{{route('admin.dashboard')}}">
                                     Dashboard
                                 </a>
                             </div>
                             
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{ route('admin.users.index') }}">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'nav-item ' : '' }}" href="{{ route('admin.users.index') }}">
                                     Profilo
                                 </a>
                             </div>
 
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center" href="{{route('admin.dashboard')}}">
                                     Sponsor
                                 </a>
                             </div>
 
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.user.message' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.message')}}">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.message' ? 'nav-item ' : '' }}" href="{{route('admin.user.message')}}">
                                     Messaggi
                                 </a>
                             </div>
 
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.review')}}">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'nav-item ' : '' }}" href="{{route('admin.user.review')}}">
                                     Recensioni e voti
                                 </a>
                             </div>
 
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center {{ Route::currentRouteName() == 'admin.user.stats' ? 'bg_selected_button nav-item  rounded-pill' : '' }}" href="{{route('admin.user.stats')}}">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.stats' ? 'nav-item ' : '' }}" href="{{route('admin.user.stats')}}">
                                     Statistiche
                                 </a>
                             </div>
                             
-                            <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <div class="nav-item m-2">
+                                <a class="nav-link text-white text-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-sign-out-alt fa-lg fa-fw"></i> {{ __('Logout') }}
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -161,7 +149,21 @@
 
                     </div>
                 </nav>
-                <main class="col-md-9 col-lg-9 p-5 m-3 bg_secondary rounded-5">
+
+                <div class="col-md-3 bg_navbar">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="mb-3 d-flex justify-content-center p-2">
+                                @if ($user->img === null)
+                                    <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
+                                @else
+                                    <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/{{$user->img}}" alt={{$user->name}}>
+                                @endif
+                        </div>
+                        <h4 class="text-white mt-3">{{ $user->name }}</h4>
+                        <div class="text-white">{{$user->email}}</div>
+                    </div> 
+                </div>
+                <main class="col-md-9 col-lg-3 d-flex align-items-center justify-content-end bg_navbar">
                     @yield('content')
                 </main>
             </div>

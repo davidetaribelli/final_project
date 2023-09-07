@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="container mt-2">
+<div class="container">
     <div class="row justify-content-center">
         {{-- dati personali. --}}
 
-        <div class="mt-4 row g-0">
+        <div class="row">
             <div class="col-12 d-xl-flex">
                 <div class="col-sm-12 col-xl-6">
                     <h3 class="text-white fw-bold">PRESENTAZIONE</h3>

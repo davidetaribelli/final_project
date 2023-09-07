@@ -33,17 +33,7 @@ $user = Auth::user();
 
 <div class="container-fluid mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="d-xl-none d-flex flex-column justify-content-center align-items-center">
-                <div class=" d-flex justify-content-center">
-                    @if ($user->img === null)
-                        <img class="profile_img_nav mt-3 rounded-circle w-75" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
-                    @else
-                        <img class="profile_img_nav mt-3 rounded-circle w-75" src="/storage/{{$user->img}}" alt={{$user->name}}>
-                    @endif
-                </div>
-               <div class="text-dark my-4">{{$user->email}}</div>
-            </div>
+        <div class="col-md-12">
             <div class="card-body">
                 @if (session('status'))
                 <div class="alert alert-primary" role="alert">
@@ -60,8 +50,8 @@ $user = Auth::user();
 
             <div id="profileMessage" class="alert alert-warning mt-3" style="display: none;"></div>
 
-            <button type="button" class="btn btn-light rounded-pill bg_cl_primary m-2 border-0">
-                <a class="text-decoration-none text-dark fw-bold" href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
+            <button type="button" class="btn btn-light rounded-pill btnColor m-2 border-0">
+                <a class="text-decoration-none text-white fw-bold" href="{{route("admin.users.edit", $user)}}">Completa il tuo profilo</a>                       
             </button>
 
             
