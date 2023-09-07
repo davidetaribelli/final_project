@@ -57,26 +57,41 @@
 
         // Configura il contesto del grafico
         let ctx = document.getElementById('graficMessagges').getContext('2d');
-        let myChart = new Chart(ctx, {
-            type: 'bar', // Tipo di grafico (puoi cambiare a 'line' o altro)
-            data: {
-                labels: dates, // Etichette sull'asse x (date dei messaggi)
-                datasets: [{
-                    label: 'Messaggi', // Etichetta del dataset
-                    data: counts, // Dati da visualizzare sul grafico
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Colore dell'area del grafico
-                    borderColor: 'rgba(75, 192, 192, 1)', // Colore del bordo
-                    borderWidth: 5 // Larghezza del bordo
-                }]
+let myChart = new Chart(ctx, {
+    type: 'bar', // Tipo di grafico (puoi cambiare a 'line' o altro)
+    data: {
+        labels: dates, // Etichette sull'asse x (date dei messaggi)
+        datasets: [{
+            label: 'Messaggi', // Etichetta del dataset
+            data: counts, // Dati da visualizzare sul grafico
+            backgroundColor: 'rgba(255, 255, 255, 0.7)', // Colore dell'area del grafico
+            borderColor: 'rgba(0, 0, 0)', // Colore del bordo
+            borderWidth: 2 // Larghezza del bordo
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                beginAtZero: true,
+                grid: {
+                    color: 'rgba(0, 0, 0)' // Cambia il colore delle linee dell'asse X
+                },
+                ticks: {
+                    color: 'black' // Cambia il colore delle etichette dell'asse X
+                }
             },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: 'rgba(0, 0, 0)' // Cambia il colore delle linee dell'asse Y
+                },
+                ticks: {
+                    color: 'black' // Cambia il colore delle etichette dell'asse Y
                 }
             }
-        });
+        }
+    }
+});
 
         //// RECENSIONI GRAFICO ////
 
@@ -115,18 +130,33 @@
                 datasets: [{
                     label: 'Recensioni', // Etichetta del dataset
                     data: countsReview, // Dati da visualizzare sul grafico
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Colore dell'area del grafico
-                    borderColor: 'rgba(75, 192, 192, 1)', // Colore del bordo
-                    borderWidth: 5 // Larghezza del bordo
+                    backgroundColor: 'rgba(255, 255, 255, 0.7)', // Colore dell'area del grafico
+                    borderColor: 'rgba(0, 0, 0)', // Colore del bordo
+                    borderWidth: 2 // Larghezza del bordo
                 }]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+        scales: {
+            x: {
+                beginAtZero: true,
+                grid: {
+                    color: 'rgba(0, 0, 0)' // Cambia il colore delle linee dell'asse X
+                },
+                ticks: {
+                    color: 'black' // Cambia il colore delle etichette dell'asse X
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: 'rgba(0, 0, 0)' // Cambia il colore delle linee dell'asse Y
+                },
+                ticks: {
+                    color: 'black' // Cambia il colore delle etichette dell'asse Y
                 }
             }
+        }
+    }
         });
 
 
@@ -167,19 +197,34 @@
                 datasets: [{
                     label: 'Voti', // Etichetta del dataset
                     data: countsVote, // Dati da visualizzare sul grafico
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Colore dell'area del grafico
-                    borderColor: 'rgba(75, 192, 192, 1)', // Colore del bordo
-                    borderWidth: 5 // Larghezza del bordo
+                    backgroundColor: 'rgba(255, 255, 255, 0.7)', // Colore dell'area del grafico
+                    borderColor: 'rgba(0, 0, 0)', // Colore del bordo
+                    borderWidth: 3 // Larghezza del bordo
                 }]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(0, 0, 0)' // Cambia il colore delle linee dell'asse X
+                    },
+                    ticks: {
+                        color: 'black' // Cambia il colore delle etichette dell'asse X
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(0, 0, 0)' // Cambia il colore delle linee dell'asse Y
+                    },
+                    ticks: {
+                        color: 'black' // Cambia il colore delle etichette dell'asse Y
                     }
                 }
             }
-        });
+        }
+    });
     
 
 </script>
