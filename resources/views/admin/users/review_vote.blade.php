@@ -4,8 +4,10 @@
 @php
     $user = Auth::user();        
 @endphp
-
-{{-- RECENSIONI --}}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {{-- RECENSIONI --}}
 <h3 class="text-white fw-bold">Recensioni ricevute</h3>
 
 @if ($user->reviews->isEmpty())
@@ -13,26 +15,22 @@
     <p>Nessuna recensione ricevuta.</p>
 </div>
 @else
-    <table class="table table-borderless">
+    <table class="table_">
         <thead>
             <tr>
-                <th class="fw-bolder"></th>
-                <th class="fw-bolder">Name</th>
-                <th class="fw-bolder">Email</th>
-                <th class="fw-bolder">Comment</th>
+                <th></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Review</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($user->reviews as $review)
             <tr>
-                <td>
-                    <small class="badge text-black">
-                        {{$review->created_at->format('d/m/y')}}
-                    </small>
-                </td>
-                <td>{{$review->name}}</td>
-                <td>{{$review->email}}</td>
-                <td>{{$review->comment}}</td>
+                <td class="text-white" data-label="">{{$review->created_at->format('d/m/y')}}</td>
+                <td class="text-white" data-label="Name">{{$review->name}}</td>
+                <td class="text-white text-truncate" data-label="Email">{{$review->email}}</td>
+                <td class="text-white" data-label="Review">{{$review->comment}}</td>
             </tr>
             @endforeach
         </tbody>
@@ -90,5 +88,9 @@
         </tbody>
     </table>
 @endif
+        </div>
+    </div>
+</div>
+
 
 @endsection

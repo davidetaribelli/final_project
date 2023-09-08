@@ -5,41 +5,38 @@
     $user = Auth::user();        
 @endphp
 
-<h3 class="text-white fw-bold">Messaggi Ricevuti</h3>
-
-@if ($user->messages->isEmpty())
-<div class="d-flex justify-center align-items-center">
-    <p>Nessun messaggio ricevuto per eventi.</p>
+<div class="container">
+    <div class="row">
+        <h3 class="text-white fw-bold p-0">Messaggi Ricevuti</h3>
+        @if ($user->messages->isEmpty())
+        <div class="d-flex justify-center align-items-center">
+            <p>Nessun messaggio ricevuto per eventi.</p>
+        </div>
+        @else
+        <div class="col-12 p-0">
+            <table class="table_">
+                <thead>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th></th>
+                </thead>
+                <tbody>
+                    @foreach ($user->messages as $message)
+                    <tr>
+                        <td class="text-white" data-label="">{{$message->created_at->format('d/m/y')}}</td>
+                        <td class="text-white" data-label="Name">{{$message->name}}</td>
+                        <td class="text-white text-truncate" data-label="Email">{{$message->email}}</td>
+                        <td class="text-white" data-label="">
+                            <a class="btn btn-danger" href="{{ route('admin.singleMessage.show', $message) }}">Visualizza</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+              </table>
+        </div>
+    @endif
+    </div>
 </div>
-@else
-    <table class="table table-borderless">
-        <thead>
-            <tr>
-                <th class="fw-bolder"></th>
-                <th class="fw-bolder">Name</th>
-                <th class="fw-bolder">Message</th>
-                <th class="fw-bolder">Email</th>
-                <th class="fw-bolder"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($user->messages as $message)
-            <tr>
-                <td>
-                    <small class="badge text-black">
-                        {{$message->created_at->format('d/m/y')}}
-                    </small>
-                </td>
-                <td>{{$message->name}}</td>
-                <td class="text-truncate widthTd">{{$message->message}}</td>
-                <td>{{$message->email}}</td>
-                <td>
-                    <a class="btn btn-danger" href="{{ route('admin.singleMessage.show', $message) }}">Visualizza Messaggio Completo</a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endif
 
 @endsection
