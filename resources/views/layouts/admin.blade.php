@@ -15,6 +15,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- braintree -->
+
+
     <!-- Fontawesome 6 cdn -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer' />
 
@@ -70,11 +73,11 @@
                         <div class="nav flex-column">
                             <div class="d-flex flex-column justify-content-center align-items-center">
                                 <div class="mb-3 d-flex justify-content-center">
-                                    @if ($user->img === null)
+                                    {{-- @if ($user->img === null)
                                         <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
                                     @else
                                         <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/{{$user->img}}" alt={{$user->name}}>
-                                    @endif
+                                    @endif --}}
                                 </div>
                                <h4 class="text-dark mt-3">{{ $user->name }}</h4>
                                <div class="text-dark">{{$user->email}}</div>
@@ -99,7 +102,7 @@
                             </div>
 
                             <div class="nav-item  rounded-pill bg_cl_primary m-2">
-                                <a class="nav-link text-dark text-center" href="{{route('admin.dashboard')}}">
+                                <a class="nav-link text-dark text-center" href="{{ route('admin.show.form') }}">
                                     Sponsor
                                 </a>
                             </div>
