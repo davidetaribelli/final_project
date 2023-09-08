@@ -9,6 +9,7 @@ $user = Auth::user();
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Dati dell'utente
+
         const userData = @json($user);
         const genreData = @json($user->genres);
 
