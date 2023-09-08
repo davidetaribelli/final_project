@@ -14,33 +14,6 @@
         </div>
         @else
         <div class="col-12 p-0">
-            {{-- <table class="table_ ">
-                <thead>
-                    <th class="fw-bolder"></th>
-                    <th class="fw-bolder"></th>
-                    <th class="fw-bolder"></th>
-                    <th class="fw-bolder"></th>
-                    <th class="fw-bolder"></th>
-                </thead>
-                <tbody>
-                    @foreach ($user->messages as $message)
-                        <tr>
-                            <td data-label="Date">
-                                <small class="badge text-black">
-                                    
-                                </small>
-                            </td>
-                            <td data-label="Name"></td>
-                            <td data-label="Message" class="text-truncate widthTd"></td>
-                            <td data-label="Email"></td>
-                            <td data-label="Message complete">
-                                
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table> --}}
-
             <table class="table_">
                 <thead>
                   <th></th>
