@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\StatsController;
 use App\Models\Message;
+use App\Http\Controllers\BraintreeController;
+
 
 /* ... */
 
@@ -14,6 +16,9 @@ Route::get('/', function () {
 });
 
 
+
+
+// Route::any('/payment', [BraintreeController::class, 'token'])->name('token')->middleware('auth');
 
 
 
@@ -30,18 +35,27 @@ Route::middleware(['auth'])
         Route::resource('users', UserController::class);
 
         Route::get('/user/message', function () {
-         return view('admin.users.message');
+            return view('admin.users.message');
         })->name('user.message');
 
         Route::resource('singleMessage', MessageController::class);
 
         Route::get('/user/stats', function () {
             return view('admin.users.stats');
-           })->name('user.stats');
+            })->name('user.stats');
 
         Route::get('/user/review', function () {
             return view('admin.users.review_vote');
-           })->name('user.review');
+            })->name('user.review');
+        Route::get('/user/sponsor', function () {
+            return view('admin.users.sponsor');
+        })->name('user.sponsor');
+
+        // pagamento
+        Route::get('/braintree/show-form', [BraintreeController::class, 'showForm'])->name('show.form');
+        Route::post('/braintree/token', [BraintreeController::class, 'getToken'])->name('get.token');
+        Route::post('/braintree/process-payment', [BraintreeController::class, 'processPayment'])->name('process.payment');
+
         
 });
 
