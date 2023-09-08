@@ -30,7 +30,7 @@
 
 <body>
     <div id="app">
-        <div class="container-fluid bg_primary min-vh-100 d-flex align-items-center">
+        <div class="container-fluid bg_primary min-vh-100">
             <div class="row justify-content-center p-5">
 
                 {{-- BARRA PER MD E SM --}}
@@ -165,7 +165,7 @@
                                 </div>
                             </div> 
                         </div>
-                        <main class="col-md-7 col-xl-8 d-flex align-items-center justify-content-end bg_navbar p-3 rounded-2">
+                        <main class="col-md-7 col-xl-8 d-flex justify-content-end bg_navbar p-3 rounded-2">
                             @yield('content')
                         </main>
                     </div>
