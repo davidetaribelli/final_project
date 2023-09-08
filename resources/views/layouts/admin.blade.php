@@ -30,7 +30,7 @@
 
 <body>
     <div id="app">
-        <div class="container-fluid bg_primary min-vh-100 d-flex align-items-center">
+        <div class="container-fluid bg_primary min-vh-100">
             <div class="row justify-content-center p-5">
 
                 {{-- BARRA PER MD E SM --}}

@@ -8,7 +8,7 @@
 @endphp
 
     <div class="container">
-        <h1 class="mt-2">Sponsorizza il tuo profilo</h1>
+        <h1 class="mt-2 text-white">Sponsorizza il tuo profilo</h1>
 
         @if (session()->has('message'))
             <div class="alert alert-success">
@@ -26,7 +26,7 @@
             @csrf
             <div class="row">
                 @foreach ($sponsors as $sponsor)
-                    <div class="col-4">
+                    <div class="col-sm-12 col-xl-4">
                         <div class="card mt-2">
                             <div class="card-body">
                                 <h5 class="card-title">Sponsorizza il tuo profilo per {{ $sponsor->duration }} ore </h5>
@@ -37,12 +37,12 @@
                     </div>
                 @endforeach
             </div>
-            <button type="submit" class="btn btn-warning mt-2">Passa ai dettagli del pagamento</button>
+            <button type="submit" class="btn btnColor text-white mt-2">Passa ai dettagli del pagamento</button>
         </form>
 
         <div class="row">
             @foreach ($sponsoredUsers as $item)
-                <div class="col-4">
+                <div class="col-sm-12 col-xl-4">
                     <div class="card mt-2">
                         <div class="card-body">
 

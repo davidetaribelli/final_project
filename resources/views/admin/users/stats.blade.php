@@ -8,25 +8,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h3 class="fw-bold text-white">Statistiche</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 d-flex flex-wrap">
-                        <div class="col-12 mx-2 my-3">
-                            <canvas id="graficMessagges"></canvas>
-                        </div>
-                    
-                        <div class="col-12 mx-2 my-3">
-                            <canvas id="graficReviews"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 d-flex justify-content-center align-items-center">
-                        <div class="col-12 mx-2">
-                            <canvas id="graficVotes"></canvas>
-                        </div>
-                    </div>
-                </div>
+        <h3 class="fw-bold text-white">Statistiche</h3>
+        <div class="col-6">
+            <div class="col-12 mx-2 my-3">
+                <canvas id="graficMessagges"></canvas>
+            </div>
+        
+            <div class="col-12 mx-2 my-3">
+                <canvas id="graficReviews"></canvas>
+            </div>
+        </div>
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-12 mx-2">
+                <canvas id="graficVotes"></canvas>
             </div>
         </div>
     </div>
