@@ -18,7 +18,6 @@
                 <thead>
                   <th></th>
                   <th>Name</th>
-                  <th>Message</th>
                   <th>Email</th>
                   <th></th>
                 </thead>
@@ -27,7 +26,6 @@
                     <tr>
                         <td class="text-white" data-label="">{{$message->created_at->format('d/m/y')}}</td>
                         <td class="text-white" data-label="Name">{{$message->name}}</td>
-                        <td class="text-white text-truncate" data-label="Message">{{$message->message}}</td>
                         <td class="text-white text-truncate" data-label="Email">{{$message->email}}</td>
                         <td class="text-white" data-label="">
                             <a class="btn btn-danger" href="{{ route('admin.singleMessage.show', $message) }}">Visualizza</a>
