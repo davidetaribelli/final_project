@@ -31,7 +31,7 @@
 <body>
     <div id="app">
         <div class="container-fluid bg_primary min-vh-100 d-flex align-items-center">
-            <div class="row justify-content-around p-3">
+            <div class="row justify-content-center p-5">
 
                 {{-- BARRA PER MD E SM --}}
                 <nav class="navbar btnColor d-lg-none">
@@ -91,81 +91,85 @@
                 </nav>
 
                 {{-- BARRA PER LG --}}
-                <nav id="sidebarMenu" class="col-md-3 col-lg-3 sidebar d-none d-xl-block">
-                    <div class="position-sticky bg_navbar ">
-                        <div class="nav flex-column">
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center" href="http://localhost:5174/">
-                                    Home
-                                </a>
+                <div class="container">
+                    <div class="row justify-content-between align-items-stretch">
+                        <nav id="sidebarMenu" class="col-12 d-none d-xl-block p-0 mb-5">
+                            <div class="position-sticky bg_navbar rounded-2">
+                                <div class="nav d-flex justify-content-evenly">
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center" href="http://localhost:5174/">
+                                            Home
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'nav-item ' : '' }}" href="{{route('admin.dashboard')}}">
+                                            Dashboard
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'nav-item ' : '' }}" href="{{ route('admin.users.index') }}">
+                                            Profilo
+                                        </a>
+                                    </div>
+        
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center" href="{{route('admin.dashboard')}}">
+                                            Sponsor
+                                        </a>
+                                    </div>
+        
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.message' ? 'nav-item ' : '' }}" href="{{route('admin.user.message')}}">
+                                            Messaggi
+                                        </a>
+                                    </div>
+        
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'nav-item ' : '' }}" href="{{route('admin.user.review')}}">
+                                            Recensioni e voti
+                                        </a>
+                                    </div>
+        
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.stats' ? 'nav-item ' : '' }}" href="{{route('admin.user.stats')}}">
+                                            Statistiche
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="nav-item m-2">
+                                        <a class="nav-link text-white text-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa-solid fa-sign-out-alt fa-lg fa-fw"></i> {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+        
+                                </div>
                             </div>
-                            
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'nav-item ' : '' }}" href="{{route('admin.dashboard')}}">
-                                    Dashboard
-                                </a>
-                            </div>
-                            
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'nav-item ' : '' }}" href="{{ route('admin.users.index') }}">
-                                    Profilo
-                                </a>
-                            </div>
-
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center" href="{{route('admin.dashboard')}}">
-                                    Sponsor
-                                </a>
-                            </div>
-
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.message' ? 'nav-item ' : '' }}" href="{{route('admin.user.message')}}">
-                                    Messaggi
-                                </a>
-                            </div>
-
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'nav-item ' : '' }}" href="{{route('admin.user.review')}}">
-                                    Recensioni e voti
-                                </a>
-                            </div>
-
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.stats' ? 'nav-item ' : '' }}" href="{{route('admin.user.stats')}}">
-                                    Statistiche
-                                </a>
-                            </div>
-                            
-                            <div class="nav-item m-2">
-                                <a class="nav-link text-white text-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="fa-solid fa-sign-out-alt fa-lg fa-fw"></i> {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-
+                        </nav>
+                        <div class="col-md-4 col-xl-3 bg_navbar align-self-baseline rounded-2 p-3">
+                            <div class="d-flex flex-wrap justify-content-center align-items-center">
+                                <div class="mb-3 d-flex justify-content-center p-2">
+                                        @if ($user->img === null)
+                                            <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
+                                        @else
+                                            <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/{{$user->img}}" alt={{$user->name}}>
+                                        @endif
+                                </div>
+                                <div class="col-12 d-flex justify-content-center flex-wrap">
+                                    <h2 class="text-white mt-3">{{ $user->name }}</h2>
+                                    <h5 class="text-white">{{$user->email}}</h5>
+                                </div>
+                            </div> 
                         </div>
-
+                        <main class="col-md-7 col-xl-8 d-flex align-items-center justify-content-end bg_navbar p-3 rounded-2">
+                            @yield('content')
+                        </main>
                     </div>
-                </nav>
-
-                <div class="col-md-3 bg_navbar">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <div class="mb-3 d-flex justify-content-center p-2">
-                                @if ($user->img === null)
-                                    <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/placeholders/placeholder.jpg" alt={{$user->name}}>
-                                @else
-                                    <img class="profile_img_nav mt-3 rounded-circle w-100" src="/storage/{{$user->img}}" alt={{$user->name}}>
-                                @endif
-                        </div>
-                        <h4 class="text-white mt-3">{{ $user->name }}</h4>
-                        <div class="text-white">{{$user->email}}</div>
-                    </div> 
                 </div>
-                <main class="col-md-9 col-lg-3 d-flex align-items-center justify-content-end bg_navbar">
-                    @yield('content')
-                </main>
             </div>
         </div>
 
