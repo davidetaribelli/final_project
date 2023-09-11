@@ -24,7 +24,7 @@
 
         <form method="POST" enctype="multipart/form-data" action="{{ route('admin.get.token') }}">
             @csrf
-            <div class="row">
+            <div class="row pb-5">
                 @foreach ($sponsors as $sponsor)
                     <div class="col-sm-12 col-xl-4">
                         <div class="card mt-2">
