@@ -103,37 +103,37 @@
                                     </div>
                                     
                                     <div class="nav-item m-2">
-                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'nav-item ' : '' }}" href="{{route('admin.dashboard')}}">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.dashboard' ? 'nav-item border-bottom' : '' }}" href="{{route('admin.dashboard')}}">
                                             Dashboard
                                         </a>
                                     </div>
                                     
                                     <div class="nav-item m-2">
-                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'nav-item ' : '' }}" href="{{ route('admin.users.index') }}">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.users.index' ? 'nav-item border-bottom' : '' }}" href="{{ route('admin.users.index') }}">
                                             Profilo
                                         </a>
                                     </div>
         
                                     <div class="nav-item m-2">
-                                        <a class="nav-link text-white text-center" href="{{route('admin.show.form')}}">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.show.form' ? 'nav-item border-bottom' : '' }}" href="{{route('admin.show.form')}}">
                                             Sponsor
                                         </a>
                                     </div>
         
                                     <div class="nav-item m-2">
-                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.message' ? 'nav-item ' : '' }}" href="{{route('admin.user.message')}}">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.message' ? 'nav-item border-bottom' : '' }}" href="{{route('admin.user.message')}}">
                                             Messaggi
                                         </a>
                                     </div>
         
                                     <div class="nav-item m-2">
-                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'nav-item ' : '' }}" href="{{route('admin.user.review')}}">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.review' ? 'nav-item border-bottom' : '' }}" href="{{route('admin.user.review')}}">
                                             Recensioni e voti
                                         </a>
                                     </div>
         
                                     <div class="nav-item m-2">
-                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.stats' ? 'nav-item ' : '' }}" href="{{route('admin.user.stats')}}">
+                                        <a class="nav-link text-white text-center {{ Route::currentRouteName() == 'admin.user.stats' ? 'nav-item border-bottom' : '' }}" href="{{route('admin.user.stats')}}">
                                             Statistiche
                                         </a>
                                     </div>
