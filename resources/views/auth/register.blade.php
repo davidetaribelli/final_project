@@ -49,7 +49,7 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-10 col-lg-6">
-            <div class="card rounded-5 bg_secondary border-0">
+            <div class="card rounded-5 bg_primary border-0">
                 <div class="card-body d-flex justify-content-center align-items-center flex-wrap">
                     <div class="col-6 d-flex justify-content-center">
                         <h2 class="my-3 text-white fw-bold badge btnColor fs-5">Register</h2>
@@ -59,7 +59,7 @@
                         @csrf
 
                         <div class="mb-2 row">
-                            <label for="name" class="col-md-6 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-6 col-form-label text-white text-md-right">{{ __('Name') }}</label>
 
                             <div class="mb-2 row">
                                 <input id="name" type="text" class="rounded-4 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="mb-2 row">
-                            <label for="surname" class="col-md-6 col-form-label text-md-right">{{ __('Surname') }}</label>
+                            <label for="surname" class="col-md-6 col-form-label text-white text-md-right">{{ __('Surname') }}</label>
 
                             <div class="mn-2 row">
                                 <input id="surname" type="text" class="rounded-4 form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="mb-2 row">
-                            <label for="region" class="col-md-6 col-form-label text-md-right">Regione</label>
+                            <label for="region" class="col-md-6 col-form-label text-white text-md-right">Regione</label>
                             <div class="mb-2 row">
                                 <select class="rounded-4 form-select @error('region') is-invalid @enderror" aria-label="Default select example" name="region">
                                     <option value="" selected>Seleziona la regione</option>
@@ -105,7 +105,7 @@
                         </div>
 
                         <div class="mb-2 row">
-                            <label for="email" class="col-md-6 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-6 col-form-label text-white text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="mb-2 row">
                                 <input id="email" type="email" class="rounded-4 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -119,7 +119,7 @@
                         </div>
 
                         <div class="mb-2 row">
-                            <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-6 col-form-label text-white text-md-right">{{ __('Password') }}</label>
 
                             <div class="mb-2 row">
                                 <input id="password" type="password" class="rounded-4 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="mb-2 row">
-                            <label for="password-confirm" class="col-md-6 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-6 col-form-label text-white text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="mb-2 row">
                                 <input id="password-confirm" type="password" class="rounded-4 form-control" name="password_confirmation" required autocomplete="new-password">

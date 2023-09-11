@@ -36,7 +36,7 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-10 col-lg-6">
-            <div class="card rounded-5 bg_secondary border-0">
+            <div class="card rounded-5 bg_primary border-0">
                 <div class="card-body d-flex justify-content-center align-items-center flex-wrap">
                     <div class="col-6 d-flex justify-content-center">
                         <h2 class="my-5 text-white fw-bold badge btnColor fs-5">Login</h2>
@@ -46,7 +46,7 @@
                         @csrf
 
                         <div class="mb-4 row">
-                            <label for="email" class="col-md-6 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-6 col-form-label text-white text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="mb-2 row">
                                 <input id="email" type="text" class="rounded-4 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="password" class="col-md-6 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-6 col-form-label text-white text-md-right">{{ __('Password') }}</label>
 
                             <div class="mb-4 row">
                                 <input id="password" type="password" class="rounded-4 form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="current-password" autofocus>
@@ -78,7 +78,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-labe text-white" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -96,7 +96,7 @@
 
                     <div class="col-12 mb-4">
                         <div class="col-12 d-flex justify-content-center align-items-center">
-                            <span class="ms-2">don't have an account yet? <a class="nav-link ms-2 text-center badge btnColor" href="{{ route('register') }}">create one</a> </span>
+                            <span class="ms-2 text-white">don't have an account yet? <a class="nav-link ms-2 text-center badge btnColor" href="{{ route('register') }}">create one</a> </span>
                         </div>
                     </div>
                     <div class="col-12 mb-4 d-flex justify-content-center">

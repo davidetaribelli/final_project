@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mt-2">Effettua il pagamento</h1>
+    <h1 class="mt-2 text-white">Effettua il pagamento</h1>
     <div class="row">
         <div class="col-6">
             <div class="card mt-2">
@@ -21,7 +21,7 @@
                 <input type="hidden" name="amount" id="amount" value="{{ $selectedPackage->price }}" required>
                 <input type="hidden" id="nonce" name="payment_method_nonce">
                 <input type="hidden" name="selected_package" id="selected_package" value="{{ $selectedPackage->id }}">
-                <button class="btn btn-warning" type="submit">Effettua il pagamento</button>
+                <button class="btn btnColor text-white" type="submit">Effettua il pagamento</button>
             </form>
         </div>
 
