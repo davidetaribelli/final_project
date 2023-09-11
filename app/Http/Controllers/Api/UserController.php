@@ -67,11 +67,19 @@ class UserController extends Controller
         return response()->json($response);
     }
 
-    public function searchByAverageVote(Request $request)
+    public function searchByAverageVote($averageVote)
     {
-
+        $averageVote = (int)$averageVote;
         $users = User::with('genres', 'sponsors', 'votes', 'reviews')
-        ->paginate(6);
+            ->leftJoin('sponsor_user', function ($join) {
+                $join->on('users.id', '=', 'sponsor_user.user_id')
+                    ->where('sponsor_user.end_time', '>', now());
+            })
+            ->addSelect('users.*', DB::raw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 1 ELSE 0 END AS has_active_sponsorship'))
+            ->where('average_vote', '>=', $averageVote)
+            ->orderByRaw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 0 ELSE 1 END')
+            ->orderBy('average_vote', 'asc')
+            ->paginate(6);
     
         $response = [
             "results" => $users,
@@ -79,40 +87,81 @@ class UserController extends Controller
         ];
     
         return response()->json($response);
-    //     $users = User::with('genres', 'sponsors', 'votes', 'reviews')
-    //     ->leftJoin('user_vote', 'users.id', '=', 'user_vote.user_id')
-    //     ->leftJoin('votes', 'user_vote.vote_id', '=', 'votes.id')
-    //     ->groupBy('users.id')
-    //     ->havingRaw('AVG(votes.vote) >= 3')
-    //     ->paginate(6);
+    }
 
-    // $response = [
-    //     "results" => $users,
-    //     "status" => true,
-    // ];
+    public function searchByReviewCount($minReviewCount)
+    {
+        // Ottieni il numero minimo di recensioni dalla richiesta
+        // $minReviewCount = $request->input('min_review_count');
 
-    // return response()->json($response);
+        // Esegui la query per ottenere gli utenti con almeno il numero minimo di recensioni
+        $minReviewCount = (int)$minReviewCount;
 
-        // $averageVote = $request->input('average_vote');
+        $users = User::with('genres', 'sponsors', 'votes', 'reviews')
+            ->leftJoin('sponsor_user', function ($join) {
+                $join->on('users.id', '=', 'sponsor_user.user_id')
+                    ->where('sponsor_user.end_time', '>', now());
+            })
+            ->addSelect('users.*', DB::raw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 1 ELSE 0 END AS has_active_sponsorship'))
+            ->where('reviews_count', '>=', $minReviewCount)
+            ->orderByRaw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 0 ELSE 1 END')
+            ->paginate(6);
 
-        // $users = User::with('genres', 'sponsors', 'votes', 'reviews')
-        //     ->leftJoin('sponsor_user', function ($join) {
-        //         $join->on('users.id', '=', 'sponsor_user.user_id')
-        //             ->where('sponsor_user.end_time', '>', now());
-        //     })
-        //     // ->addSelect('users.*', DB::raw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 1 ELSE 0 END AS has_active_sponsorship'))
-        //     ->leftJoin('user_vote', 'users.id', '=', 'user_vote.user_id')
-        //     ->leftJoin('votes', 'user_vote.vote_id', '=', 'votes.id')
-        //     ->groupBy('users.id')
-        //     ->havingRaw('AVG(votes.vote) >= ?', [$averageVote])
-        //     // ->orderByRaw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 0 ELSE 1 END')
-        //     ->paginate(6);
+        $response = [
+            "results" => $users,
+            "status" => true,
+        ];
+
+        return response()->json($response);
+    }
+
+    public function searchUsersByGenreAndAverageVote($genre, $averageVote) {
+        $averageVote = (int) $averageVote;
+        
+        $users = User::with('genres', 'sponsors', 'votes', 'reviews')
+            ->whereHas('genres', function ($query) use ($genre) {
+                $query->where('name', $genre);
+            })
+            ->leftJoin('sponsor_user', function ($join) {
+                $join->on('users.id', '=', 'sponsor_user.user_id')
+                    ->where('sponsor_user.end_time', '>', now());
+            })
+            ->addSelect('users.*', DB::raw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 1 ELSE 0 END AS has_active_sponsorship'))
+            ->where('average_vote', '>=', $averageVote)
+            ->orderByRaw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 0 ELSE 1 END')
+            ->orderBy('average_vote', 'asc')
+            ->paginate(6);
     
-        // $response = [
-        //     "results" => $users,
-        //     "status" => true,
-        // ];
+        $response = [
+            "results" => $users,
+            "status" => true,
+        ];
     
-        // return response()->json($response);
+        return response()->json($response);
+    }
+    
+    public function searchUsersByGenreAndReviewCount($genre, $minReviewCount) {
+        $minReviewCount = (int) $minReviewCount;
+    
+        $users = User::with('genres', 'sponsors', 'votes', 'reviews')
+            ->whereHas('genres', function ($query) use ($genre) {
+                $query->where('name', $genre);
+            })
+            ->where('reviews_count', '>=', $minReviewCount)
+            ->leftJoin('sponsor_user', function ($join) {
+                $join->on('users.id', '=', 'sponsor_user.user_id')
+                    ->where('sponsor_user.end_time', '>', now());
+            })
+            ->addSelect('users.*', DB::raw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 1 ELSE 0 END AS has_active_sponsorship'))
+            ->orderByRaw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 0 ELSE 1 END')
+            ->orderBy('reviews_count', 'asc')
+            ->paginate(6);
+    
+        $response = [
+            "results" => $users,
+            "status" => true,
+        ];
+    
+        return response()->json($response);
     }
 }

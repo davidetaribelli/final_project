@@ -43,6 +43,12 @@ class UserSeeder extends Seeder
                 $arrayVotes[] = $votes->random()->id;
             }
             $newUser->votes()->attach(array_unique($arrayVotes));
+            $averageVote = count($arrayVotes) > 0 ? array_sum($arrayVotes) / count($arrayVotes) : 0;
+
+            // Imposta il voto medio sull'utente
+            $newUser->average_vote = $averageVote;
+            $newUser -> save();
+
 
             $numberGenres = rand(1,3);
             $arrayGenres = [];

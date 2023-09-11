@@ -27,6 +27,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // routes per la search su vue
 Route::get("/users/search/{averageVote}", [UserController::class, "searchByAverageVote"]);
 Route::get("/users/genre/{genre}", [UserController::class, "getUsersByGenre"]);
+Route::get("/users/search/review/{minReviewCount}", [UserController::class, "searchByReviewCount"]);
+Route::get('/users/search/genre/{genre}/average_vote/{averageVote}', [UserController::class, 'searchUsersByGenreAndAverageVote']);
+Route::get("/users/search/genre/{genre}/reviews/{minReviewCount}", [UserController::class, "searchUsersByGenreAndReviewCount"]);
+
 
 Route::get("/users", [UserController::class, "index"]);
 Route::get("/genres", [GenreController::class, "index"]);
