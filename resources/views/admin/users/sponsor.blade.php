@@ -37,10 +37,10 @@
                     </div>
                 @endforeach
             </div>
-            <button type="submit" class="btn btnColor text-white mt-2">Passa ai dettagli del pagamento</button>
+            <button type="submit" class="btn btnColor text-white">Passa ai dettagli del pagamento</button>
         </form>
 
-        <div class="row">
+        <div class="row pt-5">
             @foreach ($sponsoredUsers as $item)
                 <div class="col-sm-12 col-xl-4">
                     <div class="card mt-2">

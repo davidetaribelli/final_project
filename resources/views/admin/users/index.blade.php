@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         {{-- dati personali. --}}
         <div class="col-12 d-xl-flex flex-wrap p-0">
-            <div class="col-sm-12 col-xl-10">
+            <div class="col-sm-12 col-xl-10 pb-4">
                 <h3 class="text-white fw-bold">PRESENTAZIONE</h3>
                 <div class="my-4 text-white">{{  $user->experience }}</div>
             </div>
@@ -14,7 +14,7 @@
             {{-- dati personali. --}}
             <div class="col-md-8 d-flex flex-column p-0">
                 <h3 class="text-white fw-bold">DATI PERSONALI</h3>
-                <ul class="list-group list-group-flush rounded-4 my-4">
+                <ul class="list-group list-group-flush rounded-4 my-4 pb-4">
                     <li class="list-group-item px-3 border-0"><i class="fa-regular fa-user me-3" style="color: #000000;"></i>  {{  $user->name }}</li>
                     <li class="list-group-item px-3 border-0"><i class="fa-regular fa-user me-3" style="color: #000000;"></i>  {{  $user->surname }}</li>
                     <li class="list-group-item px-3 border-0"><i class="fa-regular fa-envelope me-3" style="color: #000000;"></i>  {{  $user->email }}</li>
@@ -43,15 +43,15 @@
 
                 {{-- prezzo --}}
                 <div class="col-sm-3 col-xl-2 p-2">
-                    <h3 class="text-white fw-bold">CACHET</h3>
+                    <h3 class="text-white fw-bold ">CACHET</h3>
                     <div class="badge btnColor fs-5 my-4 p-2">
                         {{$user->cachet}}€
                     </div>
                 </div>
 
                 {{-- genere --}}
-                <div class="col-sm-3 col-md-7 p-2">
-                    <h3 class="text-white fw-bold">GENERI MUSICALI:</h3>
+                <div class="col-sm-3 col-md-7 p-2 pt-5">
+                    <h3 class="text-white fw-bold ">GENERI MUSICALI:</h3>
                     @foreach ($user->genres as $genre)
                         <span class="list-unstyled text-white fs-5 text-decoration-none badge btnColor my-4">{{$genre->name}}</span>  
                     @endforeach
@@ -60,7 +60,7 @@
         </div>
 
         {{-- bottone --}} 
-        <div class="col-12 d-flex justify-content-md-start justify-content-xl-center p-0 ">
+        <div class="col-12 d-flex justify-content-md-start pt-4 ps-0">
             <button type="button" class="mt-4 btn btn-light btnColor border-0">
                 <a class="text-decoration-none text-white fs-5 fw-bold" href="{{route("admin.users.edit", $user->id)}}">Modifica il profilo</a>                       
             </button>

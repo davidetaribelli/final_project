@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <h3 class="text-white fw-bold p-0">Messaggio Completo</h3>
+        <h3 class="text-white fw-bold ps-0 pb-4">Messaggio Completo</h3>
 
         <div class="card">
             <div class="card-body">
@@ -14,8 +14,8 @@
             </div>
         </div>
 
-        <div class="col-3 my-3 p-0">
-            <a href="{{ route('admin.user.message') }}" class="btn btn-primary">Torna Indietro</a>
+        <div class="col-3 my-3 ps-0 pt-2">
+            <a href="{{ route('admin.user.message') }}" class="btn btn-secondary">Torna Indietro</a>
         </div>
     </div>
 </div>
