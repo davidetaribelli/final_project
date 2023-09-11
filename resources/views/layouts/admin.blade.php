@@ -160,8 +160,8 @@
                                         @endif
                                 </div>
                                 <div class="col-12 d-flex justify-content-center flex-wrap">
-                                    <h2 class="text-white mt-3">{{ $user->name }}</h2>
-                                    <h5 class="text-white">{{$user->email}}</h5>
+                                    <h2 class="text-white mt-3 col-12 d-flex justify-content-center">{{ $user->name }}</h2>
+                                    <h5 class="text-white col-12 d-flex justify-content-center">{{$user->email}}</h5>
                                 </div>
                             </div> 
                         </div>

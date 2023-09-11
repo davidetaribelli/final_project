@@ -11,7 +11,7 @@ return [
         'name' => 'Rock'
     ],
     [
-        'name' => 'Punck'
+        'name' => 'Punk'
     ],
     [
         'name' => 'Classical'
