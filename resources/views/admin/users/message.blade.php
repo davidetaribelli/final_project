@@ -7,7 +7,8 @@
 
 <div class="container">
     <div class="row">
-        <h3 class="text-white fw-bold p-0">Messaggi Ricevuti</h3>
+        
+        <h3 class="text-white fw-bold ps-0 pb-4">Messaggi Ricevuti</h3>
         @if ($user->messages->isEmpty())
         <div class="d-flex justify-center align-items-center">
             <p>Nessun messaggio ricevuto per eventi.</p>
@@ -15,8 +16,8 @@
         @else
         <div class="col-12 p-0">
             <table class="table_">
-                <thead>
-                  <th></th>
+                <thead class="">
+                  <th>Date</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th></th>
@@ -24,11 +25,11 @@
                 <tbody>
                     @foreach ($user->messages as $message)
                     <tr>
-                        <td class="text-white" data-label="">{{$message->created_at->format('d/m/y')}}</td>
+                        <td class="text-white" data-label="Date">{{$message->created_at->format('d/m/y')}}</td>
                         <td class="text-white" data-label="Name">{{$message->name}}</td>
                         <td class="text-white text-truncate" data-label="Email">{{$message->email}}</td>
                         <td class="text-white" data-label="">
-                            <a class="btn btn-danger" href="{{ route('admin.singleMessage.show', $message) }}">Visualizza</a>
+                            <a class="btn btn-secondary" href="{{ route('admin.singleMessage.show', $message) }}">Visualizza</a>
                         </td>
                     </tr>
                     @endforeach

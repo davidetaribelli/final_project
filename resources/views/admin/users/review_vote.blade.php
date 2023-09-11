@@ -8,14 +8,14 @@
     <div class="row">
         <div class="col-12">
             {{-- RECENSIONI --}}
-<h3 class="text-white fw-bold">Recensioni ricevute</h3>
+<h3 class="text-white fw-bold pb-4">Recensioni ricevute</h3>
 
 @if ($user->reviews->isEmpty())
 <div class="d-flex justify-center align-items-center">
     <p>Nessuna recensione ricevuta.</p>
 </div>
 @else
-    <table class="table_">
+    <table class="table_ ">
         <thead>
             <tr>
                 <th></th>
@@ -38,14 +38,14 @@
 @endif
 
 {{-- VOTI --}}
-<h3 class="text-white fw-bold">Voti Ricevuti</h3>
+<h3 class="text-white fw-bold pt-5 pb-4">Voti Ricevuti</h3>
 
 @if ($user->votes->isEmpty())
 <div class="d-flex justify-center align-items-center">
     <p>Nessun voto ricevuto.</p>
 </div>
 @else
-    <table class="table table-borderless">
+    <table class="table table-borderless ">
         <thead>
             <tr>
                 <th class="fw-bolder">Voti</th>
@@ -76,7 +76,7 @@
                 <td>
                     @for ($i = 1; $i <= 5; $i++)
                         @if ($i <= $voteValue)
-                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: #ab8ae0;"></i>
                         @else
                         <i class="fa-solid fa-star" style="color: #000000;"></i>
                         @endif

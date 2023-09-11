@@ -82,6 +82,7 @@ body{
 .table_ {
     width: 100% !important;
     border-collapse: collapse !important;
+    
   }
   
   .table_ td,
@@ -93,12 +94,12 @@ body{
   }
   
   .table_ th {
-    background-color: #92c9e6 !important;
+    background-color: #a79ddbe1 !important;
     color: #ffffff !important;
   }
   
   .table_ tbody tr:nth-child(even) {
-    background-color: #d1e8f5 !important;
+    background-color: #a79ddb8f !important;
   }
   
   /*responsive*/

@@ -195,7 +195,7 @@ let myChart = new Chart(ctx, {
             data: {
                 labels: datesVote, // Etichette sull'asse x (date dei messaggi)
                 datasets: [{
-                    label: 'Voti', // Etichetta del dataset
+                    label: 'Voti',  // Etichetta del dataset
                     data: countsVote, // Dati da visualizzare sul grafico
                     backgroundColor: 'rgba(255, 255, 255, 0.7)', // Colore dell'area del grafico
                     borderColor: 'rgba(0, 0, 0)', // Colore del bordo
