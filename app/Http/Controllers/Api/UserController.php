@@ -18,8 +18,10 @@ class UserController extends Controller
         $users = User::with('genres', 'sponsors', 'votes', 'reviews')
         ->leftJoin('sponsor_user', function ($join) {
             $join->on('users.id', '=', 'sponsor_user.user_id')
-                ->where('sponsor_user.end_time', '>', now())
-                ->orWhere('sponsor_user.start_time', '>', now());
+            ->where(function ($query) {
+                $query->where('sponsor_user.start_time', '<', now())
+                        ->where('sponsor_user.end_time', '>', now());
+                    });
         })
         ->addSelect('users.*', DB::raw('CASE WHEN sponsor_user.id IS NOT NULL AND sponsor_user.end_time > NOW() THEN 1 ELSE 0 END AS has_active_sponsorship'))
         // Aggiungi una clausola orderByRaw per ordinare prima gli utenti con sponsorizzazioni attive
