@@ -70,6 +70,7 @@ let myChart = new Chart(ctx, {
         }]
     },
     options: {
+        
         scales: {
             x: {
                 beginAtZero: true,
