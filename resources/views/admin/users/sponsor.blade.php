@@ -24,13 +24,29 @@
 
         <form method="POST" enctype="multipart/form-data" action="{{ route('admin.get.token') }}">
             @csrf
-            <div class="row pb-5">
+            {{-- <div class="row pb-5">
                 @foreach ($sponsors as $sponsor)
                     <div class="col-sm-12 col-xl-4">
                         <div class="card mt-2">
                             <div class="card-body">
                                 <h5 class="card-title">Sponsorizza il tuo profilo per {{ $sponsor->duration }} ore </h5>
                                 <p class="card-text">{{ $sponsor->price }} €</p>
+                                <input type="radio" name="selected_package" checked value="{{ $sponsor->id }}"> Seleziona
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div> --}}
+            <div class="row pb-5">
+                @foreach ($sponsors as $sponsor)
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $sponsor->duration }} ore</h5>
+                                <p class="card-text">Prezzo: {{ $sponsor->price }} €</p>
+                                <p class="card-text">Sponsorizza il tuo profilo</p>
+                            </div>
+                            <div class="card-footer">
                                 <input type="radio" name="selected_package" checked value="{{ $sponsor->id }}"> Seleziona
                             </div>
                         </div>
