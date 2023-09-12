@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -26,6 +27,12 @@ class ReviewController extends Controller
 
     // Salva la recensione nel database
     $review->save();
+
+    $user = User::find($review->user_id);
+        if ($user) {
+            $user->reviews_count = $user->reviews()->count();
+            $user->save();
+        }
 
     $response = [
         "message" => "Recensione aggiunta con successo",

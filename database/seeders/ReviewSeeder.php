@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
@@ -63,6 +64,12 @@ class ReviewSeeder extends Seeder
             $newReview-> date = $review['date'];
 
             $newReview->save();
+
+            $user = User::find($newReview->user_id);
+                if ($user) {
+                    $user->reviews_count = $user->reviews()->count();
+                    $user->save();
+                }
 
         }
     }

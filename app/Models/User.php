@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -31,6 +32,17 @@ class User extends Authenticatable
     public function votes(){
         return $this->belongsToMany(Vote::class)->withPivot('date');
     }
+
+    public function calculateAverageVote()
+    {
+        $averageVote = DB::table('user_vote')
+            ->where('user_id', $this->id)
+            ->join('votes', 'user_vote.vote_id', '=', 'votes.id')
+            ->avg('votes.vote');
+
+        $this->average_vote = round($averageVote, 2);
+        $this->save();
+    }
     
     /**
      * The attributes that are mass assignable.
@@ -46,7 +58,9 @@ class User extends Authenticatable
         'region',
         'phone',
         'cachet',
-        'experience'
+        'experience',
+        'average_vote',
+        'reviews_count'
     ];
 
     /**

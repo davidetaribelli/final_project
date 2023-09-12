@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class VoteController extends Controller
@@ -21,6 +22,13 @@ class VoteController extends Controller
         'vote_id' => $voteId,
         'date' => $date,
     ]);
+
+    // Calcola il voto medio per l'utente
+    $user = User::find($userId);
+    if ($user) {
+        $user->calculateAverageVote();
+    }
+
 
     // Restituisci una risposta di successo o qualsiasi altra risposta necessaria
     return response()->json(['message' => 'Voto aggiunto con successo']);

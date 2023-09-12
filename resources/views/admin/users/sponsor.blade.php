@@ -42,24 +42,30 @@
 
         <div class="row pt-5">
             @foreach ($sponsoredUsers as $item)
-                <div class="col-sm-12 col-xl-4">
-                    <div class="card mt-2">
-                        <div class="card-body">
 
-                            @if ($item->start_time < Carbon::now())
-                            <div class="card-title">Sponsorizzazione attiva </div>
-                            @endif
+                @if ($item->end_time > Carbon::now())
+                
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="card mt-2">
+                            <div class="card-body">
 
-                            @if ($item->start_time > Carbon::now())
-                            <div class="card-title">Sponsorizzazione futura </div>
-                            @endif
-                            
-                            <div class="card-text">Data inizio: {{ $item->start_time }}</div>
-                            <div class="card-text">Data fine: {{ $item->end_time }}</div>
+                                @if ($item->start_time < Carbon::now() && $item->end_time > Carbon::now())
+                                <div class="card-title">Sponsorizzazione attiva </div>
+                                @endif
 
+                                @if ($item->start_time > Carbon::now())
+                                <div class="card-title">Sponsorizzazione futura </div>
+                                @endif
+                                
+                                <div class="card-text">Data inizio: {{ $item->start_time }}</div>
+                                <div class="card-text">Data fine: {{ $item->end_time }}</div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+                
+                @endif
+
             @endforeach
         </div>
     </div>
